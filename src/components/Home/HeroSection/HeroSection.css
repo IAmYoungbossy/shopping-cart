@@ -85,7 +85,7 @@ small {
   }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 390px) {
   .hero-image > img:first-child {
     width: 300px;
   }
