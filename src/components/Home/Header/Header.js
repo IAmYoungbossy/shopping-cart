@@ -1,5 +1,6 @@
 import NavBar from "./NavBar/NavBar";
 import SearchBar from "./SearchBar/SearchBar";
+import "./Header.css";
 
 export default function Header() {
   return (

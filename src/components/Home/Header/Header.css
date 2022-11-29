@@ -1,0 +1,10 @@
+header {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  align-items: center;
+  justify-content: space-around;
+}
+ header > h1 {
+  flex: 1;
+ }
