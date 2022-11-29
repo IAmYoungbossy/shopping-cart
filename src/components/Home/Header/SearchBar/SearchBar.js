@@ -1,7 +1,7 @@
 export default function SearchBar() {
   return (
     <div>
-      <button>Serach Products</button>
+      <button>Serach</button>
       <input
         type="search"
         name="serach"
