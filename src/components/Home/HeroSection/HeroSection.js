@@ -1,5 +1,5 @@
 import "./HeroSection.css";
-import Africa from "../assets/black-culture.png";
+import Africa from "../../assets/black-culture.png";
 
 export default function HeroSection() {
   return (
@@ -21,7 +21,7 @@ export default function HeroSection() {
       <div className="hero-image">
         <img
           src={Africa}
-          alt="African Models"
+          alt="African Fanshion"
         />
       </div>
     </section>

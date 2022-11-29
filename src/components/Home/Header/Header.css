@@ -6,5 +6,5 @@ header {
   justify-content: space-around;
 }
  header > h1 {
-  flex: 1;
+  flex: 8;
  }

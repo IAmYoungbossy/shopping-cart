@@ -8,4 +8,5 @@ nav ul {
 
 nav {
   flex: 1;
+  min-width: 193px;
 }
