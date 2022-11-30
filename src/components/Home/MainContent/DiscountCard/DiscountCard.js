@@ -103,7 +103,9 @@ function Card({
           <p className="current-price">{currentPrice}</p>{" "}
           <p className="previousPrice">{ProviousPrice}</p>
         </div>
-        <p className="available">{numberInStock} Available in stock</p>
+        <small>
+          <p className="available">{numberInStock} Available in stock</p>
+        </small>
       </div>
     </div>
   );
