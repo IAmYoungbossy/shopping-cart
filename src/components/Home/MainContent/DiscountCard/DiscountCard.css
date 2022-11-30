@@ -1,0 +1,42 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card-container > div:nth-child(3) > div:first-of-type {
+  padding-top: 20px;
+}
+
+.discount {
+  width: 200px;
+  text-align: center;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.discount > div:last-of-type {
+  margin-top: auto;
+}
+
+.star-div > img {
+  width: 16px;
+}
+
+.discount-header {
+  gap: 10px;
+  display: flex;
+  margin-bottom: 25px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.discount-header > p {
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+main > div:nth-child(2) {
+  margin-top: 50px;
+}
