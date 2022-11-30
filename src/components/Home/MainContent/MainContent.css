@@ -1,3 +1,44 @@
 main {
   margin-top: 50px;
 }
+
+main > div:first-of-type {
+  gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+main > div:first-of-type > * {
+  width: min(250px, 50vw);
+  display: flex;
+}
+
+.card-text-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-text-div > button {
+  width: fit-content;
+  margin-top: auto;
+}
+
+.card-image-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 834px) {
+  main > div:first-of-type {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card-image-div > img {
+    width: 110px;
+  }
+}
+

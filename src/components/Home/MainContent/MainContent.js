@@ -1,5 +1,10 @@
 import "./MainContent.css";
+import ShopNowCard from "./ShopNowCard/ShopNowCard";
 
 export default function MainContent() {
-  return <main>Hello</main>;
+  return (
+    <main>
+      <ShopNowCard />
+    </main>
+  );
 }
