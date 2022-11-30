@@ -40,7 +40,7 @@ small {
 }
 
 .hero-text > h1 {
-  font-size: 2.1rem;
+  font-size: min(2.5rem, 5vw);
 }
 
 .hero-image {
@@ -60,12 +60,16 @@ small {
     min-height: min-content;
     flex-direction: column;
   }
-
+  .hero-text {
+    max-width: 450px;
+    margin: auto;
+  }
   .hero-text > small {
     text-align: center;
   }
   .hero-text > h1 {
     text-align: center;
+    font-size: 2.5rem;
   }
   .hero-text > p:nth-of-type(1) {
     text-align: center;
@@ -86,7 +90,14 @@ small {
 }
 
 @media screen and (max-width: 390px) {
+  .hero-text {
+    max-width: 450px;
+    margin: auto;
+  }
   .hero-image > img:first-child {
     width: 300px;
+  }
+  .hero-text > h1 {
+    font-size: 2.5rem;
   }
 }

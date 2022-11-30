@@ -4,7 +4,7 @@ import "./Header.css";
 export default function Header() {
   return (
     <header>
-      <h1>FakeStore</h1>
+      <h1>FakeKedu</h1>
       <NavBar />
     </header>
   );
