@@ -1,5 +1,6 @@
 import { Fragment } from "react";
-import Header from "./Header/Header";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
 import HeroSection from "./HeroSection/HeroSection";
 import MainContent from "./MainContent/MainContent";
 
@@ -9,6 +10,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <MainContent />
+      <Footer />
     </Fragment>
   );
 }
