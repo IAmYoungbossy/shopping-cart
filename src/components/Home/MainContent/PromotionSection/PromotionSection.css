@@ -1,0 +1,50 @@
+.promo-card {
+  display: flex;
+  padding: 10px;
+  width: 250px;
+  height: 350px;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+  border: 1px solid purple;
+}
+
+main > div:nth-child(3) {
+  margin-top: 50px;
+}
+
+.promo-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.promo-header > h2 {
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+.promo-card-wrapper {
+  gap: 20px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+}
+
+.promo-text {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.promo-card-wrapper > div:nth-child(2) {
+  flex-direction: column-reverse;
+}
+
+.promo-card-wrapper > div:nth-child(2) > div:first-of-type > img {
+  width: 150px;
+}

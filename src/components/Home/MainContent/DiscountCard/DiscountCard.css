@@ -1,6 +1,8 @@
 .card-container {
   row-gap: 15px;
   display: flex;
+  padding: 10px;
+  border: 1px solid purple;
   flex-wrap: wrap;
   justify-content: space-between;
 }

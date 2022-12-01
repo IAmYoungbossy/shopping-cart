@@ -20,7 +20,7 @@ export default function DiscountCard() {
           model="Rolex Sky-Dweller 18kt White Gold/SS Champagne Dial 326933 2022 Complete"
           src={Watch}
           alt="A Watch"
-          brandName="Rolex"
+          brandName="ROLEX"
           currentPrice="$1,234.54"
           ProviousPrice="$2,343.43"
           numberInStock="5"

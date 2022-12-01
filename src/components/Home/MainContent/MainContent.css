@@ -1,5 +1,5 @@
 main {
-  margin-top: 50px;
+  margin: 50px 0;
 }
 
 main > div:first-of-type {
@@ -12,6 +12,7 @@ main > div:first-of-type {
 main > div:first-of-type > * {
   width: min(250px, 50vw);
   display: flex;
+  margin: 0 auto;
 }
 
 .card-text-div {
@@ -43,4 +44,3 @@ main > div:first-of-type > * {
     width: 110px;
   }
 }
-
