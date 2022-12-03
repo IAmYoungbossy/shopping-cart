@@ -1,0 +1,23 @@
+.shop {
+  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shop > .discount {
+  flex: 1 1;
+  max-width: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.discount-image > img {
+  width: 140px;
+}
+
+.shop > .discount > .discount-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+}

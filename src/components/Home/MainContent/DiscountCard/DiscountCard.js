@@ -22,13 +22,10 @@ export default function DiscountCard() {
           alt="A Watch"
           brandName="ROLEX"
           currentPrice="$1,234.54"
-          ProviousPrice="$2,343.43"
+          proviousPrice="$2,343.43"
           numberInStock="5"
         >
-          <StarRating
-            checkedStar={3}
-            uncheckedStar={2}
-          />
+          <StarRating rating={3} />
         </Card>
         <Card
           model="Hp Pavilion 15- AMD Rymzn 3 -12GB RAM/1TB HDD 2.6GHz - 3.5GHz"
@@ -36,13 +33,10 @@ export default function DiscountCard() {
           alt="A Laptop"
           brandName="HP"
           currentPrice="$1,644.50"
-          ProviousPrice="$2,843.43"
+          proviousPrice="$2,843.43"
           numberInStock="51"
         >
-          <StarRating
-            checkedStar={4}
-            uncheckedStar={1}
-          />
+          <StarRating rating={4} />
         </Card>
         <Card
           model="Sound Bar Wireless Bluetooth Speaker Stereo Subwoofer Soundbar - Black/Grey"
@@ -50,13 +44,10 @@ export default function DiscountCard() {
           alt="A Speak"
           brandName="LG"
           currentPrice="$874.50"
-          ProviousPrice="$1,843.43"
+          proviousPrice="$1,843.43"
           numberInStock="51"
         >
-          <StarRating
-            checkedStar={2}
-            uncheckedStar={3}
-          />
+          <StarRating rating={2} />
         </Card>
         <Card
           model="Samsung Galaxy Note 10 Plus (Note 10+) 6.8-Inch SINGLE SIM 4,300 MAh Smartphone"
@@ -64,27 +55,24 @@ export default function DiscountCard() {
           alt="A Phone"
           brandName="SAMSUNG"
           currentPrice="$2874.50"
-          ProviousPrice="$4,843.43"
+          proviousPrice="$4,843.43"
           numberInStock="3"
         >
-          <StarRating
-            checkedStar={5}
-            uncheckedStar={0}
-          />
+          <StarRating rating={5} />
         </Card>
       </div>
     </div>
   );
 }
 
-function Card({
+export function Card({
   children,
   src,
   alt,
   brandName,
   model,
   currentPrice,
-  ProviousPrice,
+  proviousPrice,
   numberInStock,
 }) {
   return (
@@ -100,8 +88,8 @@ function Card({
         <p>{model}</p>
         <div className="star-rating">{children}</div>
         <div className="price">
-          <p className="current-price">{currentPrice}</p>{" "}
-          <p className="previousPrice">{ProviousPrice}</p>
+          <p className="current-price">${currentPrice}</p>{" "}
+          {proviousPrice && <p className="previousPrice">${proviousPrice}</p>}
         </div>
         <small>
           <p className="available">{numberInStock} Available in stock</p>
@@ -125,15 +113,22 @@ function duplicateStar(maxNumOfStar, src) {
   return iconArr;
 }
 
-function StarRating({ checkedStar, uncheckedStar }) {
-  const starArr = duplicateStar(checkedStar, GoldStar);
-  const noStarArr = duplicateStar(uncheckedStar, GreyStar);
-  const returnedStar = starArr.map((star) => star);
-  const returnedNoStar = noStarArr.map((star) => star);
+export function StarRating({ rating }) {
+  const { returnedStar, returnedNoStar } = calcStarRating(rating);
   return (
     <div className="star-div">
       {returnedStar}
       {returnedNoStar}
     </div>
   );
+}
+
+function calcStarRating(rating) {
+  const checkedStar = Math.floor(parseFloat(rating));
+  const uncheckedStar = 5 - checkedStar;
+  const starArr = duplicateStar(checkedStar, GoldStar);
+  const noStarArr = duplicateStar(uncheckedStar, GreyStar);
+  const returnedStar = starArr.map((star) => star);
+  const returnedNoStar = noStarArr.map((star) => star);
+  return { returnedStar, returnedNoStar };
 }
