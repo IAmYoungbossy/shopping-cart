@@ -38,6 +38,7 @@ export default function Shop() {
   return (
     <Fragment>
       <Header />
+      <h2 className="shop-header">Available Products</h2>
       {isLoaded && <div className="shop">{productsCards}</div>}
       <Footer />
     </Fragment>

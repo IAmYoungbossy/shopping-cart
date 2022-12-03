@@ -8,10 +8,15 @@ footer {
 }
 
 .link {
-  gap: 10px 40px;
+  flex: 1;
+  gap: 10px 5px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.mailing {
+  flex: 1;
 }
 
 footer li {

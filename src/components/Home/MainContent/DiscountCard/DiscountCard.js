@@ -91,6 +91,16 @@ export function Card({
           <p className="current-price">${currentPrice}</p>{" "}
           {proviousPrice && <p className="previousPrice">${proviousPrice}</p>}
         </div>
+        {!proviousPrice && (
+          <div className="add-cart-wrapper">
+            <div className="control-btns">
+              <button className="add btn">+</button>
+              <span className="number-of-items">0</span>
+              <button className="minus btn">-</button>
+            </div>
+            <button className="add-to-cart">Add to cart</button>
+          </div>
+        )}
         <small>
           <p className="available">{numberInStock} Available in stock</p>
         </small>

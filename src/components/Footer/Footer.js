@@ -49,7 +49,7 @@ function FakeKedu() {
 
 function Shop() {
   return (
-    <div className="shop">
+    <div className="footer-shop">
       <h4>Shop</h4>
       <ul>
         <li>Tennis Racquests</li>
