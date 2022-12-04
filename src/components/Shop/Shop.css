@@ -16,7 +16,7 @@
   border: 1px solid purple;
 }
 
-.discount-image > img {
+.shop > .discount > .discount-image > img {
   width: 130px;
   height: 130px;
 }

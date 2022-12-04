@@ -4,8 +4,6 @@ import {
 } from "../Home/MainContent/DiscountCard/DiscountCard";
 import { Fragment, useEffect, useState } from "react";
 import getProductData from "../../fetchProductData";
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
 import "./Shop.css";
 
 export default function Shop() {
@@ -37,10 +35,8 @@ export default function Shop() {
 
   return (
     <Fragment>
-      <Header />
       <h2 className="shop-header">Available Products</h2>
       {isLoaded && <div className="shop">{productsCards}</div>}
-      <Footer />
     </Fragment>
   );
 }
