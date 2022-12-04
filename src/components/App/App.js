@@ -6,9 +6,10 @@ import Shop from "../Shop/Shop";
 import "./App.css";
 
 function App() {
+  const [cart, setCart] = useState([]);
   return (
     <div className="App">
-      <Header />
+      <Header cart={cart} />
       {/* <Home /> */}
       <Shop />
       <Footer />
