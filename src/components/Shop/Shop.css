@@ -12,25 +12,25 @@
   border-radius: 5px;
   padding-bottom: 10px;
   background-color: white;
-  justify-content: center;
   margin: 0;
   border: 1px solid purple;
 }
 
 .discount-image > img {
-  width: 140px;
+  width: 130px;
+  height: 130px;
 }
 
 .shop > .discount > .discount-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 250px;
+  padding: 5px 0;
 }
 
 .discount-desc > p:first-of-type {
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 0.65rem;
 }
 
 h2.shop-header {
