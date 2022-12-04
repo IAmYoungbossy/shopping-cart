@@ -5,7 +5,6 @@ export default function Cart({ cart }) {
   return (
     <div>
       <div className="cart-icon">
-        {" "}
         <img
           src={CartIcon}
           alt="cart icon"

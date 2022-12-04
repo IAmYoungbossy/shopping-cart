@@ -42,7 +42,7 @@ h2.shop-header {
 
 .add-cart-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin: 5px 0;
   gap: 5px;
 }
@@ -89,7 +89,7 @@ span.number-of-items {
 
 button.add-to-cart {
   border: 1px solid purple;
-  padding: 2px 4px;
+  padding: 4.5px 4px;
   background-color: transparent;
   font-weight: bold;
   width: 85px;

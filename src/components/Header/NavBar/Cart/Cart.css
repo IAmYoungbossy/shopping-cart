@@ -16,17 +16,19 @@ nav > ul > li:last-of-type > div {
   top: -10px;
   right: -3px;
   width: 20px;
+  padding: 3px;
   height: 20px;
+  display: flex;
   color: white;
-  padding-top: 1px;
   font-weight: bold;
-  font-size: .95rem;
   position: absolute;
   border-radius: 100%;
-  background-color: #ff6565;
+  align-items: center;
   font-family: sans-serif;
+  background-color: #ff6565;
 }
 
 .cart-length > span {
-  margin: 5px;
+  font-size: 0.7rem;
+  margin: auto;
 }

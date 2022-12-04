@@ -6,7 +6,7 @@ import { Fragment, useEffect, useState } from "react";
 import getProductData from "../../fetchProductData";
 import "./Shop.css";
 
-export default function Shop() {
+export default function Shop({ ...props }) {
   const [items, setItems] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -21,9 +21,11 @@ export default function Shop() {
 
   const productsCards = items.map((item) => (
     <Card
+      {...props}
+      item={item}
       key={item.id}
-      model={item.title}
       src={item.image}
+      model={item.title}
       alt={item.category}
       brandName={item.category}
       currentPrice={item.price}

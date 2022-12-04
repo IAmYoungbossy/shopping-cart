@@ -75,6 +75,8 @@ export function Card({
   currentPrice,
   proviousPrice,
   numberInStock,
+  handlePushToCart,
+  item,
 }) {
   const [increaseItem, setIncreaseItem] = useState(0);
   return (
@@ -95,25 +97,36 @@ export function Card({
         </div>
         {!proviousPrice && (
           <div className="add-cart-wrapper">
-            <div className="control-btns">
+            {increaseItem > 0 && (
+              <div className="control-btns">
+                <button
+                  className="add btn"
+                  onClick={() => setIncreaseItem(increaseItem + 1)}
+                >
+                  +
+                </button>
+                <span className="number-of-items">{increaseItem}</span>
+                <button
+                  className="minus btn"
+                  onClick={() => {
+                    setIncreaseItem(increaseItem - 1);
+                  }}
+                >
+                  -
+                </button>
+              </div>
+            )}
+            {increaseItem === 0 && (
               <button
-                className="add btn"
-                onClick={() => setIncreaseItem(increaseItem + 1)}
-              >
-                +
-              </button>
-              <span className="number-of-items">{increaseItem}</span>
-              <button
-                className="minus btn"
+                className="add-to-cart"
                 onClick={() => {
-                  if (increaseItem === 0) return;
-                  setIncreaseItem(increaseItem - 1);
+                  setIncreaseItem(increaseItem + 1);
+                  handlePushToCart(item);
                 }}
               >
-                -
+                Add to cart
               </button>
-            </div>
-            <button className="add-to-cart">Add to cart</button>
+            )}
           </div>
         )}
         <small>
