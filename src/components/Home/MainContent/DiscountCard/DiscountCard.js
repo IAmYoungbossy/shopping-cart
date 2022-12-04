@@ -75,7 +75,7 @@ export function Card({
   currentPrice,
   proviousPrice,
   numberInStock,
-  handlePushToCart,
+  handleManipulateItem,
   item,
 }) {
   const [increaseItem, setIncreaseItem] = useState(0);
@@ -101,7 +101,10 @@ export function Card({
               <div className="control-btns">
                 <button
                   className="add btn"
-                  onClick={() => setIncreaseItem(increaseItem + 1)}
+                  onClick={() => {
+                    setIncreaseItem(increaseItem + 1);
+                    handleManipulateItem(item);
+                  }}
                 >
                   +
                 </button>
@@ -110,6 +113,7 @@ export function Card({
                   className="minus btn"
                   onClick={() => {
                     setIncreaseItem(increaseItem - 1);
+                    handleManipulateItem(item, "Remove");
                   }}
                 >
                   -
@@ -121,7 +125,7 @@ export function Card({
                 className="add-to-cart"
                 onClick={() => {
                   setIncreaseItem(increaseItem + 1);
-                  handlePushToCart(item);
+                  handleManipulateItem(item);
                 }}
               >
                 Add to cart

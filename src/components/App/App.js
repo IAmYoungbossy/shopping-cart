@@ -8,24 +8,37 @@ import "./App.css";
 function App() {
   const [cart, setCart] = useState({});
 
-  const handlePushToCart = (item) => {
+  // Checks if item already exist in cart then increases/decreases item
+  // else it create new object of push item with its ID as object key.
+  const handleManipulateItem = (item, operator) => {
+    let editItem;
+    const addToCart = {
+      ...cart,
+      [item.id]: { item, itemNum: 1, totalPrice: item.price },
+    };
     if (cart.hasOwnProperty(item.id)) {
-      const cartCopy = {
-        ...cart,
-        [item.id]: { ...cart[item.id], itemNum: cart[item.id].itemNum + 1 },
+      // Increases or decreases Item in cart depending on user interaction
+      if (operator === "Remove") editItem = cart[item.id].itemNum - 1;
+      else editItem = cart[item.id].itemNum + 1;
+
+      const updateItemInCart = {
+        ...cart[item.id],
+        itemNum: editItem,
+        totalPrice: editItem * item.price,
       };
+      const cartCopy = { ...cart, [item.id]: updateItemInCart };
+
+      // Deletes item from cart if its itemNum in cart is zero
+      if (cartCopy[item.id].itemNum === 0) delete cartCopy[item.id];
       setCart(cartCopy);
-    } else {
-      const addToCart = { ...cart, [item.id]: { item, itemNum: 1 } }
-      setCart(addToCart);
-    }
+    } else setCart(addToCart);
   };
-  
+
   return (
     <div className="App">
-      <Header cart={[]} />
+      <Header cart={cart} />
       {/* <Home /> */}
-      <Shop handlePushToCart={handlePushToCart} />
+      <Shop handleManipulateItem={handleManipulateItem} />
       <Footer />
     </div>
   );
