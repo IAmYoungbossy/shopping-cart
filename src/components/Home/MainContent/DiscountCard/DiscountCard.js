@@ -5,6 +5,7 @@ import Laptop from "../../../assets/laptop.png";
 import Speaker from "../../../assets/speaker.png";
 import Phone from "../../../assets/phone.png";
 import "./DiscountCard.css";
+import { useState } from "react";
 
 export default function DiscountCard() {
   return (
@@ -75,6 +76,7 @@ export function Card({
   proviousPrice,
   numberInStock,
 }) {
+  const [increaseItem, setIncreaseItem] = useState(0);
   return (
     <div className="discount">
       <div className="discount-image">
@@ -94,9 +96,22 @@ export function Card({
         {!proviousPrice && (
           <div className="add-cart-wrapper">
             <div className="control-btns">
-              <button className="add btn">+</button>
-              <span className="number-of-items">0</span>
-              <button className="minus btn">-</button>
+              <button
+                className="add btn"
+                onClick={() => setIncreaseItem(increaseItem + 1)}
+              >
+                +
+              </button>
+              <span className="number-of-items">{increaseItem}</span>
+              <button
+                className="minus btn"
+                onClick={() => {
+                  if (increaseItem === 0) return;
+                  setIncreaseItem(increaseItem - 1);
+                }}
+              >
+                -
+              </button>
             </div>
             <button className="add-to-cart">Add to cart</button>
           </div>

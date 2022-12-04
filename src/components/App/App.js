@@ -1,5 +1,3 @@
-// import { useEffect } from "react";
-// import getProductData from "../../fetchProductData";
 // import Home from "../Home/Home";
 import Shop from "../Shop/Shop";
 import "./App.css";
