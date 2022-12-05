@@ -14,6 +14,7 @@ export default function Shop({ ...props }) {
       src={item.item.image}
       model={item.item.title}
       alt={item.item.category}
+      // isCartActive={isCartActive}
       brandName={item.item.category}
       currentPrice={item.item.price}
       // numberInStock={item.item.rating.count}
@@ -43,13 +44,7 @@ export default function Shop({ ...props }) {
         {!isCartActive ? "Available Products" : "Items In Cart"}
       </h2>
       {isLoaded && (
-        <div className="shop">
-          {!isCartActive ? (
-            productsCards
-          ) : (
-            cartItems
-          )}
-        </div>
+        <div className="shop">{!isCartActive ? productsCards : cartItems}</div>
       )}
     </>
   );

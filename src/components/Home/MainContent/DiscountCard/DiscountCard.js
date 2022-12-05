@@ -90,6 +90,7 @@ export function Card({
           model={model}
           children={children}
           brandName={brandName}
+          isCartActive={isCartActive}
           currentPrice={currentPrice}
           increaseItem={increaseItem}
           proviousPrice={proviousPrice}
@@ -109,6 +110,7 @@ function CardDetails({
   model,
   children,
   brandName,
+  isCartActive,
   currentPrice,
   increaseItem,
   proviousPrice,
@@ -117,7 +119,7 @@ function CardDetails({
   handleManipulateItem,
 }) {
   return (
-    <div className="discount">
+    <div className={isCartActive === undefined ? "display-cart" : "discount"}>
       <Image
         src={src}
         alt={alt}

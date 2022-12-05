@@ -33,18 +33,44 @@ nav > ul > li:last-of-type > div {
   margin: auto;
 }
 
-.display-cart > .discount > .discount-image > img {
-  width: 80px;
+.display-cart > .discount-image > img {
+  width: 70px;
 }
 
-.display-cart > .discount {
+.display-cart {
   width: 500px;
   display: flex;
   flex-direction: row;
   margin: 10px auto;
   padding: 10px;
+  border: 1px solid purple;
+  position: relative;
+  min-width: 280px;
+  height: 140px;
 }
 
 .discount-image {
   padding-right: 10px;
+}
+
+.display-cart > .discount-desc > .add-cart-wrapper {
+  justify-content: flex-start;
+}
+
+.display-cart > .discount-desc > .add-cart-wrapper > .control-btns {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 13px;
+  right: 12px;
+}
+
+.display-cart > .discount-desc {
+  display: flex;
+  flex-direction: column;
+}
+
+.display-cart > .discount-desc > small {
+  margin-top: auto;
+  text-align: start;
 }
