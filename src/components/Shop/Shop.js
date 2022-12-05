@@ -45,6 +45,12 @@ export default function Shop({ ...props }) {
     <>
       <h2 className="shop-header">
         {!isCartActive ? "Available Products" : "Items In Cart"}
+        {isCartActive && (
+          <p className="sum-total">
+            Sum Total:{" "}
+            ${cart.reduce((total, item) => item.totalPrice + total, 0)}
+          </p>
+        )}
       </h2>
       {isLoaded && (
         <div className="shop">{!isCartActive ? productsCards : cartItems}</div>
