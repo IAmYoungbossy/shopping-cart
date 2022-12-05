@@ -45,8 +45,8 @@ nav > ul > li:last-of-type > div {
   padding: 10px;
   border: 1px solid purple;
   position: relative;
-  min-width: 280px;
-  height: 140px;
+  min-width: 270px;
+  min-height: 140px;
 }
 
 .discount-image {
