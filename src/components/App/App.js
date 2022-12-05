@@ -46,7 +46,10 @@ function App() {
         handleCartDisplay={handleCartDisplay}
       />
       {/* <Home /> */}
-      <Shop handleManipulateItem={handleManipulateItem} />
+      <Shop
+        handleManipulateItem={handleManipulateItem}
+        isCartActive={isCartActive}
+      />
       <Footer />
     </div>
   );

@@ -81,55 +81,35 @@ export function Card({
   const [increaseItem, setIncreaseItem] = useState(0);
   return (
     <div className="discount">
-      <div className="discount-image">
-        <img
-          src={src}
-          alt={alt}
-        />
-      </div>
+      <Image
+        src={src}
+        alt={alt}
+      />
       <div className="discount-desc">
         <p>{brandName}</p>
         <p>{model}</p>
         <div className="star-rating">{children}</div>
-        <div className="price">
-          <p className="current-price">${currentPrice}</p>{" "}
-          {proviousPrice && <p className="previousPrice">${proviousPrice}</p>}
-        </div>
+        <Price
+          currentPrice={currentPrice}
+          proviousPrice={proviousPrice}
+        />
         {!proviousPrice && (
           <div className="add-cart-wrapper">
             {increaseItem > 0 && (
-              <div className="control-btns">
-                <button
-                  className="add btn"
-                  onClick={() => {
-                    setIncreaseItem(increaseItem + 1);
-                    handleManipulateItem(item);
-                  }}
-                >
-                  +
-                </button>
-                <span className="number-of-items">{increaseItem}</span>
-                <button
-                  className="minus btn"
-                  onClick={() => {
-                    setIncreaseItem(increaseItem - 1);
-                    handleManipulateItem(item, "Remove");
-                  }}
-                >
-                  -
-                </button>
-              </div>
+              <ControlItemInCart
+                handleManipulateItem={handleManipulateItem}
+                increaseItem={increaseItem}
+                setIncreaseItem={setIncreaseItem}
+                item={item}
+              />
             )}
-            {increaseItem === 0 && (
-              <button
-                className="add-to-cart"
-                onClick={() => {
-                  setIncreaseItem(increaseItem + 1);
-                  handleManipulateItem(item);
-                }}
-              >
-                Add to cart
-              </button>
+            {increaseItem < 1 && (
+              <AddToCartButton
+                handleManipulateItem={handleManipulateItem}
+                increaseItem={increaseItem}
+                setIncreaseItem={setIncreaseItem}
+                item={item}
+              />
             )}
           </div>
         )}
@@ -137,6 +117,76 @@ export function Card({
           <p className="available">{numberInStock} Available in stock</p>
         </small>
       </div>
+    </div>
+  );
+}
+
+function AddToCartButton({
+  setIncreaseItem,
+  handleManipulateItem,
+  item,
+  increaseItem,
+}) {
+  return (
+    <button
+      className="add-to-cart"
+      onClick={() => {
+        setIncreaseItem(increaseItem + 1);
+        handleManipulateItem(item);
+      }}
+    >
+      Add to cart
+    </button>
+  );
+}
+
+function ControlItemInCart({
+  setIncreaseItem,
+  handleManipulateItem,
+  increaseItem,
+  item,
+}) {
+  return (
+    <div className="control-btns">
+      <button
+        className="add btn"
+        onClick={() => {
+          setIncreaseItem(increaseItem + 1);
+          handleManipulateItem(item);
+        }}
+      >
+        +
+      </button>
+      <span className="number-of-items">{increaseItem}</span>
+      <button
+        className="minus btn"
+        onClick={() => {
+          setIncreaseItem(increaseItem - 1);
+          handleManipulateItem(item, "Remove");
+        }}
+      >
+        -
+      </button>
+    </div>
+  );
+}
+
+function Image({ src, alt }) {
+  return (
+    <div className="discount-image">
+      <img
+        src={src}
+        alt={alt}
+      />
+    </div>
+  );
+}
+
+function Price({ currentPrice, proviousPrice }) {
+  return (
+    <div className="price">
+      <p className="current-price">${currentPrice}</p>{" "}
+      {proviousPrice && <p className="previousPrice">${proviousPrice}</p>}
     </div>
   );
 }
