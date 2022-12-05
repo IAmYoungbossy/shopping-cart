@@ -14,12 +14,15 @@ export default function Shop({ ...props }) {
       src={item.item.image}
       model={item.item.title}
       alt={item.item.category}
-      // isCartActive={isCartActive}
       brandName={item.item.category}
       currentPrice={item.item.price}
-      // numberInStock={item.item.rating.count}
       handleManipulateItem={handleManipulateItem}
-    ></Card>
+    >
+      <SubTotal
+        totalPrice={item.totalPrice}
+        itemNum={item.itemNum}
+      />{" "}
+    </Card>
   ));
 
   const productsCards = items.map((item) => (
@@ -47,5 +50,15 @@ export default function Shop({ ...props }) {
         <div className="shop">{!isCartActive ? productsCards : cartItems}</div>
       )}
     </>
+  );
+}
+
+function SubTotal({ totalPrice, itemNum }) {
+  return (
+    <p>
+      <em>
+        Total of ${totalPrice} for {itemNum} {itemNum > 1 ? "items" : "item"}
+      </em>
+    </p>
   );
 }

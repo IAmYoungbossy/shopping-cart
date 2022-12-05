@@ -74,3 +74,12 @@ nav > ul > li:last-of-type > div {
   margin-top: auto;
   text-align: start;
 }
+
+em {
+  font-size: 0.85rem;
+}
+
+.display-cart > .discount-desc > .price > .current-price {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
