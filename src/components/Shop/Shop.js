@@ -2,22 +2,24 @@ import {
   Card,
   StarRating,
 } from "../Home/MainContent/DiscountCard/DiscountCard";
-import { Fragment, useEffect, useState } from "react";
-import getProductData from "../../fetchProductData";
 import "./Shop.css";
 
 export default function Shop({ ...props }) {
-  const [items, setItems] = useState([]);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const { isLoaded, items, cart, isCartActive, handleManipulateItem } = props;
 
-  useEffect(() => {
-    const productArr = async () => {
-      const products = await getProductData();
-      setItems(products);
-      setIsLoaded(true);
-    };
-    productArr();
-  }, []);
+  const cartItems = cart.map((item) => (
+    <Card
+      item={item.item}
+      key={item.item.id}
+      src={item.item.image}
+      model={item.item.title}
+      alt={item.item.category}
+      brandName={item.item.category}
+      currentPrice={item.item.price}
+      // numberInStock={item.item.rating.count}
+      handleManipulateItem={handleManipulateItem}
+    ></Card>
+  ));
 
   const productsCards = items.map((item) => (
     <Card
@@ -36,9 +38,19 @@ export default function Shop({ ...props }) {
   ));
 
   return (
-    <Fragment>
-      <h2 className="shop-header">Available Products</h2>
-      {isLoaded && <div className="shop">{productsCards}</div>}
-    </Fragment>
+    <>
+      <h2 className="shop-header">
+        {!isCartActive ? "Available Products" : "Items In Cart"}
+      </h2>
+      {isLoaded && (
+        <div className="shop">
+          {!isCartActive ? (
+            productsCards
+          ) : (
+            cartItems
+          )}
+        </div>
+      )}
+    </>
   );
 }

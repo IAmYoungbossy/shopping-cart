@@ -67,18 +67,55 @@ export default function DiscountCard() {
 }
 
 export function Card({
-  children,
   src,
   alt,
-  brandName,
+  item,
   model,
+  children,
+  brandName,
   currentPrice,
+  isCartActive,
   proviousPrice,
   numberInStock,
   handleManipulateItem,
-  item,
 }) {
   const [increaseItem, setIncreaseItem] = useState(0);
+  return (
+    <>
+      {!isCartActive && (
+        <CardDetails
+          src={src}
+          alt={alt}
+          item={item}
+          model={model}
+          children={children}
+          brandName={brandName}
+          currentPrice={currentPrice}
+          increaseItem={increaseItem}
+          proviousPrice={proviousPrice}
+          numberInStock={numberInStock}
+          setIncreaseItem={setIncreaseItem}
+          handleManipulateItem={handleManipulateItem}
+        />
+      )}
+    </>
+  );
+}
+
+function CardDetails({
+  src,
+  alt,
+  item,
+  model,
+  children,
+  brandName,
+  currentPrice,
+  increaseItem,
+  proviousPrice,
+  numberInStock,
+  setIncreaseItem,
+  handleManipulateItem,
+}) {
   return (
     <div className="discount">
       <Image
