@@ -32,3 +32,19 @@ nav > ul > li:last-of-type > div {
   font-size: 0.7rem;
   margin: auto;
 }
+
+.display-cart > .discount > .discount-image > img {
+  width: 80px;
+}
+
+.display-cart > .discount {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.discount-image {
+  padding-right: 10px;
+}

@@ -1,7 +1,7 @@
 import CartIcon from "../../../assets/cart.png";
 import "./Cart.css";
 
-export default function Cart({ cart }) {
+export default function Cart({ cart, handleCartDisplay }) {
   // Gets total number of items in cart obj.
   const getTotalNumOfItems = () =>
     Object.values(cart)
@@ -9,7 +9,7 @@ export default function Cart({ cart }) {
       .reduce((total, product) => product.itemNum + total, 0);
 
   return (
-    <div>
+    <div onClick={handleCartDisplay}>
       <div className="cart-icon">
         <img
           src={CartIcon}

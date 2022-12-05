@@ -7,6 +7,7 @@ import "./App.css";
 
 function App() {
   const [cart, setCart] = useState({});
+  const [isCartActive, setIsCartActive] = useState(false);
 
   // Checks if item already exist in cart then increases/decreases item
   // else it create new object of push item with its ID as object key.
@@ -34,9 +35,16 @@ function App() {
     } else setCart(addToCart);
   };
 
+  const handleCartDisplay = () => {
+    isCartActive ? setIsCartActive(false) : setIsCartActive(true);
+  };
+
   return (
     <div className="App">
-      <Header cart={cart} />
+      <Header
+        cart={cart}
+        handleCartDisplay={handleCartDisplay}
+      />
       {/* <Home /> */}
       <Shop handleManipulateItem={handleManipulateItem} />
       <Footer />
