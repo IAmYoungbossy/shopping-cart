@@ -1,4 +1,4 @@
-import Home from "../Home/Home";
+// import Home from "../Home/Home";
 import { useState } from "react";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
@@ -10,7 +10,7 @@ function App() {
 
   // Checks if item already exist in cart then increases/decreases item
   // else it create new object of push item with its ID as object key.
-  const handleManipulateItem = (item, operator) => {
+  const handleManipulateItem = (item, action) => {
     let editItem;
     const addToCart = {
       ...cart,
@@ -18,7 +18,7 @@ function App() {
     };
     if (cart.hasOwnProperty(item.id)) {
       // Increases or decreases Item in cart depending on user interaction
-      if (operator === "Remove") editItem = cart[item.id].itemNum - 1;
+      if (action === "Remove") editItem = cart[item.id].itemNum - 1;
       else editItem = cart[item.id].itemNum + 1;
 
       const updateItemInCart = {
