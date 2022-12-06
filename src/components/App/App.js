@@ -9,7 +9,7 @@ import { CartPage } from "../Header/NavBar/Cart/Cart";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
-  const [test, setTest] = useState({});
+  const [shoppingProducts, setShoppingProducts] = useState({});
   const [isLoaded, setIsLoaded] = useState(false);
   let cartArray = [];
 
@@ -27,34 +27,35 @@ function App() {
       products.forEach(getItemToObject);
 
       // Sets state for use
-      setTest(productsObject);
+      setShoppingProducts(productsObject);
       setIsLoaded(true);
     };
     productArr();
   }, []);
 
-  function handleTest(product, increaseQuantity) {
+  function handleManipulateCartItem(product, addOrReduce) {
     let updatedItemQuantity;
-    if (increaseQuantity === "increase") {
-      updatedItemQuantity = test[product.id].itemNum + 1;
+    if (addOrReduce === "increase") {
+      updatedItemQuantity = shoppingProducts[product.id].itemNum + 1;
     } else {
-      updatedItemQuantity = test[product.id].itemNum - 1;
+      updatedItemQuantity = shoppingProducts[product.id].itemNum - 1;
     }
     const testCopy = {
-      ...test,
+      ...shoppingProducts,
       [product.id]: {
-        ...test[product.id],
+        ...shoppingProducts[product.id],
         itemNum: updatedItemQuantity,
         totalPrice: updatedItemQuantity * product.price,
       },
     };
-    setTest(testCopy);
+    setShoppingProducts(testCopy);
   }
 
   const handleCartDisplay = () => {
     cartArray = [];
-    for (const item in test) {
-      if (test[item].itemNum > 0) cartArray.push(test[item]);
+    for (const item in shoppingProducts) {
+      if (shoppingProducts[item].itemNum > 0)
+        cartArray.push(shoppingProducts[item]);
     }
   };
 
@@ -62,7 +63,7 @@ function App() {
     <Router>
       <div className="App">
         <Header
-          test={test}
+          shoppingProducts={shoppingProducts}
           handleCartDisplay={handleCartDisplay}
         />
         <Routes>
@@ -75,9 +76,9 @@ function App() {
             element={
               <Shop
                 isLoaded={isLoaded}
-                items={Object.values(test).flat()}
-                test={test}
-                handleTest={handleTest}
+                items={Object.values(shoppingProducts).flat()}
+                shoppingProducts={shoppingProducts}
+                handleManipulateCartItem={handleManipulateCartItem}
               />
             }
           />
@@ -85,9 +86,9 @@ function App() {
             path="/cart"
             element={
               <CartPage
-                items={Object.values(test).flat()}
-                test={test}
-                handleTest={handleTest}
+                items={Object.values(shoppingProducts).flat()}
+                shoppingProducts={shoppingProducts}
+                handleManipulateCartItem={handleManipulateCartItem}
               />
             }
           />

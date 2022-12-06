@@ -75,24 +75,24 @@ export function Card({
   currentPrice,
   proviousPrice,
   numberInStock,
-  test,
-  handleTest,
+  shoppingProducts,
+  handleManipulateCartItem,
 }) {
   return (
     <>
-        <CardDetails
-          src={src}
-          alt={alt}
-          item={item}
-          model={model}
-          children={children}
-          brandName={brandName}
-          currentPrice={currentPrice}
-          proviousPrice={proviousPrice}
-          numberInStock={numberInStock}
-          test={test}
-          handleTest={handleTest}
-        />
+      <CardDetails
+        src={src}
+        alt={alt}
+        item={item}
+        model={model}
+        children={children}
+        brandName={brandName}
+        currentPrice={currentPrice}
+        proviousPrice={proviousPrice}
+        numberInStock={numberInStock}
+        shoppingProducts={shoppingProducts}
+        handleManipulateCartItem={handleManipulateCartItem}
+      />
     </>
   );
 }
@@ -107,8 +107,8 @@ function CardDetails({
   currentPrice,
   proviousPrice,
   numberInStock,
-  test,
-  handleTest,
+  shoppingProducts,
+  handleManipulateCartItem,
 }) {
   return (
     <div className="discount">
@@ -126,18 +126,18 @@ function CardDetails({
         />
         {!proviousPrice && (
           <div className="add-cart-wrapper">
-            {test[item.id].itemNum > 0 && (
+            {shoppingProducts[item.id].itemNum > 0 && (
               <ControlItemInCart
                 item={item}
-                test={test}
-                handleTest={handleTest}
+                shoppingProducts={shoppingProducts}
+                handleManipulateCartItem={handleManipulateCartItem}
               />
             )}
-            {test[item.id].itemNum < 1 && (
+            {shoppingProducts[item.id].itemNum < 1 && (
               <AddToCartButton
                 item={item}
-                test={test}
-                handleTest={handleTest}
+                shoppingProducts={shoppingProducts}
+                handleManipulateCartItem={handleManipulateCartItem}
               />
             )}
           </div>
@@ -150,15 +150,12 @@ function CardDetails({
   );
 }
 
-function AddToCartButton({
-  item,
-  handleTest,
-}) {
+function AddToCartButton({ item, handleManipulateCartItem }) {
   return (
     <button
       className="add-to-cart"
       onClick={() => {
-        handleTest(item, "increase")
+        handleManipulateCartItem(item, "increase");
       }}
     >
       Add to cart
@@ -168,24 +165,26 @@ function AddToCartButton({
 
 function ControlItemInCart({
   item,
-  test,
-  handleTest,
+  shoppingProducts,
+  handleManipulateCartItem,
 }) {
   return (
     <div className="control-btns">
       <button
         className="add btn"
         onClick={() => {
-          handleTest(item, "increase")
+          handleManipulateCartItem(item, "increase");
         }}
       >
         +
       </button>
-      <span className="number-of-items">{test[item.id].itemNum}</span>
+      <span className="number-of-items">
+        {shoppingProducts[item.id].itemNum}
+      </span>
       <button
         className="minus btn"
         onClick={() => {
-          handleTest(item)
+          handleManipulateCartItem(item);
         }}
       >
         -
