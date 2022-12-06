@@ -127,7 +127,7 @@ function CardDetails({
         {!proviousPrice && (
           <div className="add-cart-wrapper">
             {shoppingProducts[item.id].itemNum > 0 && (
-              <ControlItemInCart
+              <ControlItemQuantityButtons
                 item={item}
                 shoppingProducts={shoppingProducts}
                 handleManipulateCartItem={handleManipulateCartItem}
@@ -163,7 +163,7 @@ function AddToCartButton({ item, handleManipulateCartItem }) {
   );
 }
 
-function ControlItemInCart({
+function ControlItemQuantityButtons({
   item,
   shoppingProducts,
   handleManipulateCartItem,
@@ -204,6 +204,8 @@ function Image({ src, alt }) {
   );
 }
 
+// Function conditional displays previous price before discount if previous
+// price is available
 function Price({ currentPrice, proviousPrice }) {
   return (
     <div className="price">
@@ -213,6 +215,29 @@ function Price({ currentPrice, proviousPrice }) {
   );
 }
 
+// Display stars as rating on page
+export function StarRating({ rating }) {
+  const { returnedStar, returnedNoStar } = getGoldandGreyStarRatio(rating);
+  return (
+    <div className="star-div">
+      {returnedStar}
+      {returnedNoStar}
+    </div>
+  );
+}
+
+// Function assigns the ratio between gold and grey star based on rating number
+function getGoldandGreyStarRatio(rating) {
+  const checkedStar = Math.floor(parseFloat(rating));
+  const uncheckedStar = 5 - checkedStar;
+  const starArr = duplicateStar(checkedStar, GoldStar);
+  const noStarArr = duplicateStar(uncheckedStar, GreyStar);
+  const returnedStar = starArr.map((star) => star);
+  const returnedNoStar = noStarArr.map((star) => star);
+  return { returnedStar, returnedNoStar };
+}
+
+// Function duplicates an image based on number passed to it
 function duplicateStar(maxNumOfStar, src) {
   const iconArr = [];
   for (let i = 1; i <= maxNumOfStar; i++) {
@@ -225,24 +250,4 @@ function duplicateStar(maxNumOfStar, src) {
     );
   }
   return iconArr;
-}
-
-export function StarRating({ rating }) {
-  const { returnedStar, returnedNoStar } = calcStarRating(rating);
-  return (
-    <div className="star-div">
-      {returnedStar}
-      {returnedNoStar}
-    </div>
-  );
-}
-
-function calcStarRating(rating) {
-  const checkedStar = Math.floor(parseFloat(rating));
-  const uncheckedStar = 5 - checkedStar;
-  const starArr = duplicateStar(checkedStar, GoldStar);
-  const noStarArr = duplicateStar(uncheckedStar, GreyStar);
-  const returnedStar = starArr.map((star) => star);
-  const returnedNoStar = noStarArr.map((star) => star);
-  return { returnedStar, returnedNoStar };
 }
