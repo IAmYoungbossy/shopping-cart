@@ -3,7 +3,6 @@ import { Card } from "../../../Home/MainContent/DiscountCard/DiscountCard";
 import "./Cart.css";
 
 export default function Cart({ shoppingProducts }) {
-
   // Gets number of added items to cart array
   const { cartArray } = productToDisplayOnCartPage(shoppingProducts);
 
@@ -55,6 +54,10 @@ export function CartPage({
   // Destructure to make cartArray available outside its scope
   const { cartArray } = productToDisplayOnCartPage(shoppingProducts);
 
+  // Gets total price of all items on cart page
+  const sumPriceOfItems = getTotalPrice(cartArray);
+
+  // Maps Card component to each product in cart array
   const cartItems = cartArray.map((item) => (
     <Card
       shoppingProductArray={shoppingProductArray}
@@ -74,19 +77,23 @@ export function CartPage({
       />{" "}
     </Card>
   ));
+
   return (
     <div className="display-cart">
       {" "}
       <h2>Items In Cart</h2>
-      <h3>
-        Sum Total: $
-        {cartArray.reduce((total, item) => item.totalPrice + total, 0)}
-      </h3>{" "}
-      {cartItems}
+      <h3>Sum Total: ${sumPriceOfItems}</h3> {cartItems}
     </div>
   );
 }
 
+// Gets overall price of all items
+function getTotalPrice(cartArray) {
+  const sumPriceOfItems = (total, item) => item.totalPrice + total;
+  return cartArray.reduce(sumPriceOfItems, 0);
+}
+
+// Displays sub total price for each item
 function SubTotal({ totalPrice, itemNum }) {
   return (
     <p>
