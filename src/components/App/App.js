@@ -13,25 +13,30 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   let cartArray = [];
 
-  useEffect(() => {
-    const productArr = async () => {
-      const products = await getProductData();
-      let productsObject;
+  useEffect(() => getApiItemsToObjectProperties(), []);
 
-      // Function adds array items to productsObject
-      const getItemToObject = (product) =>
-        (productsObject = {
-          ...productsObject,
-          [product.id]: { product, itemNum: 0, totalPrice: 0 },
-        });
-      products.forEach(getItemToObject);
+  const getApiItemsToObjectProperties = async () => {
+    // Get product data from API
+    const products = await getProductData();
 
-      // Sets state for use
-      setShoppingProducts(productsObject);
-      setIsLoaded(true);
+    // Initialize empty object to store product data
+    let productsObject = {};
+
+    // Function to add each product to the productsObject
+    const addProductToObject = (product) => {
+      productsObject = {
+        ...productsObject,
+        [product.id]: { product, itemNum: 0, totalPrice: 0 },
+      };
     };
-    productArr();
-  }, []);
+
+    // Loop through products and add each one to the object
+    products.forEach(addProductToObject);
+
+    // Set state for use in the component
+    setShoppingProducts(productsObject);
+    setIsLoaded(true);
+  };
 
   function handleManipulateCartItem(product, quantityChange) {
     // Increases or decreases product quantity based on user choice
