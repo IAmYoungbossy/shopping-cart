@@ -7,6 +7,7 @@ import "./Shop.css";
 export default function Shop({ ...props }) {
   const { isLoaded, shoppingProductArray } = props;
   
+  // Maps each item in array to Card component for display
   const productsCards = shoppingProductArray.map((item) => (
     <Card
       {...props}
