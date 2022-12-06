@@ -33,11 +33,11 @@ nav > ul > li:last-of-type > div {
   margin: auto;
 }
 
-.display-cart > .discount-image > img {
+.display-cart > .discount > .discount-image > img {
   width: 70px;
 }
 
-.display-cart {
+.display-cart > .discount {
   width: 500px;
   display: flex;
   flex-direction: row;
@@ -53,11 +53,11 @@ nav > ul > li:last-of-type > div {
   padding-right: 10px;
 }
 
-.display-cart > .discount-desc > .add-cart-wrapper {
+.display-cart > .discount > .discount-desc > .add-cart-wrapper {
   justify-content: flex-start;
 }
 
-.display-cart > .discount-desc > .add-cart-wrapper > .control-btns {
+.display-cart > .discount > .discount-desc > .add-cart-wrapper > .control-btns {
   display: flex;
   align-items: center;
   position: absolute;
@@ -65,12 +65,12 @@ nav > ul > li:last-of-type > div {
   right: 12px;
 }
 
-.display-cart > .discount-desc {
+.display-cart > .discount > .discount-desc {
   display: flex;
   flex-direction: column;
 }
 
-.display-cart > .discount-desc > small {
+.display-cart > .discount > .discount-desc > small {
   margin-top: auto;
   text-align: start;
 }
@@ -79,7 +79,7 @@ em {
   font-size: 0.85rem;
 }
 
-.display-cart > .discount-desc > .price > .current-price {
+.display-cart > .discount > .discount-desc > .price > .current-price {
   font-weight: 600;
   font-size: 0.85rem;
 }
@@ -87,4 +87,16 @@ em {
 .cart-link {
   display: flex;
   align-items: center;
+}
+
+.display-cart > h2 {
+  text-align: center;
+}
+
+.display-cart > h3 {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: underline;
+  margin-bottom: 30px;
 }

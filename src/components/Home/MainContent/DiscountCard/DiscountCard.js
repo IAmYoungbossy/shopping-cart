@@ -73,7 +73,6 @@ export function Card({
   children,
   brandName,
   currentPrice,
-  isCartActive,
   proviousPrice,
   numberInStock,
   test,
@@ -81,7 +80,6 @@ export function Card({
 }) {
   return (
     <>
-      {!isCartActive && (
         <CardDetails
           src={src}
           alt={alt}
@@ -89,14 +87,12 @@ export function Card({
           model={model}
           children={children}
           brandName={brandName}
-          isCartActive={isCartActive}
           currentPrice={currentPrice}
           proviousPrice={proviousPrice}
           numberInStock={numberInStock}
           test={test}
           handleTest={handleTest}
         />
-      )}
     </>
   );
 }
@@ -108,7 +104,6 @@ function CardDetails({
   model,
   children,
   brandName,
-  isCartActive,
   currentPrice,
   proviousPrice,
   numberInStock,
@@ -116,7 +111,7 @@ function CardDetails({
   handleTest,
 }) {
   return (
-    <div className={isCartActive === undefined ? "display-cart" : "discount"}>
+    <div className="discount">
       <Image
         src={src}
         alt={alt}

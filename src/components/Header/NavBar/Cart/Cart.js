@@ -58,7 +58,17 @@ export function CartPage({ test, items, handleTest }) {
       />{" "}
     </Card>
   ));
-  return <div>{cartItems}</div>;
+  return (
+    <div className="display-cart">
+      {" "}
+      <h2>Items In Cart</h2>
+      <h3>
+        Sum Total: $
+        {cartArray.reduce((total, item) => item.totalPrice + total, 0)}
+      </h3>{" "}
+      {cartItems}
+    </div>
+  );
 }
 
 function SubTotal({ totalPrice, itemNum }) {
