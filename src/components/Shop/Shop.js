@@ -5,25 +5,7 @@ import {
 import "./Shop.css";
 
 export default function Shop({ ...props }) {
-  const { isLoaded, items, cart, isCartActive, handleManipulateItem } = props;
-
-  const cartItems = cart.map((item) => (
-    <Card
-      item={item.item}
-      key={item.item.id}
-      src={item.item.image}
-      model={item.item.title}
-      alt={item.item.category}
-      brandName={item.item.category}
-      currentPrice={item.item.price}
-      handleManipulateItem={handleManipulateItem}
-    >
-      <SubTotal
-        totalPrice={item.totalPrice}
-        itemNum={item.itemNum}
-      />{" "}
-    </Card>
-  ));
+  const { isLoaded, items } = props;
 
   const productsCards = items.map((item) => (
     <Card
@@ -43,28 +25,8 @@ export default function Shop({ ...props }) {
 
   return (
     <>
-      <h2 className="shop-header">
-        {!isCartActive ? "Available Products" : "Items In Cart"}
-        {isCartActive && (
-          <p className="sum-total">
-            Sum Total:{" "}
-            ${cart.reduce((total, item) => item.totalPrice + total, 0)}
-          </p>
-        )}
-      </h2>
-      {isLoaded && (
-        <div className="shop">{!isCartActive ? productsCards : cartItems}</div>
-      )}
+      <h2 className="shop-header">Items In Cart</h2>
+      {isLoaded && <div className="shop">{productsCards}</div>}
     </>
-  );
-}
-
-function SubTotal({ totalPrice, itemNum }) {
-  return (
-    <p>
-      <em>
-        Total of ${totalPrice} for {itemNum} {itemNum > 1 ? "items" : "item"}
-      </em>
-    </p>
   );
 }

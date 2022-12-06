@@ -83,3 +83,8 @@ em {
   font-weight: 600;
   font-size: 0.85rem;
 }
+
+.cart-link {
+  display: flex;
+  align-items: center;
+}

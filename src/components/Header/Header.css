@@ -8,3 +8,7 @@ header {
  header > h1 {
   flex: 8;
  }
+
+ a {
+  text-decoration: none;
+}

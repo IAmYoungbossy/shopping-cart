@@ -5,7 +5,6 @@ import Laptop from "../../../assets/laptop.png";
 import Speaker from "../../../assets/speaker.png";
 import Phone from "../../../assets/phone.png";
 import "./DiscountCard.css";
-import { useState } from "react";
 
 export default function DiscountCard() {
   return (
@@ -77,9 +76,9 @@ export function Card({
   isCartActive,
   proviousPrice,
   numberInStock,
-  handleManipulateItem,
+  test,
+  handleTest,
 }) {
-  const [increaseItem, setIncreaseItem] = useState(0);
   return (
     <>
       {!isCartActive && (
@@ -92,11 +91,10 @@ export function Card({
           brandName={brandName}
           isCartActive={isCartActive}
           currentPrice={currentPrice}
-          increaseItem={increaseItem}
           proviousPrice={proviousPrice}
           numberInStock={numberInStock}
-          setIncreaseItem={setIncreaseItem}
-          handleManipulateItem={handleManipulateItem}
+          test={test}
+          handleTest={handleTest}
         />
       )}
     </>
@@ -112,11 +110,10 @@ function CardDetails({
   brandName,
   isCartActive,
   currentPrice,
-  increaseItem,
   proviousPrice,
   numberInStock,
-  setIncreaseItem,
-  handleManipulateItem,
+  test,
+  handleTest,
 }) {
   return (
     <div className={isCartActive === undefined ? "display-cart" : "discount"}>
@@ -134,20 +131,18 @@ function CardDetails({
         />
         {!proviousPrice && (
           <div className="add-cart-wrapper">
-            {increaseItem > 0 && (
+            {test[item.id].itemNum > 0 && (
               <ControlItemInCart
-                handleManipulateItem={handleManipulateItem}
-                increaseItem={increaseItem}
-                setIncreaseItem={setIncreaseItem}
                 item={item}
+                test={test}
+                handleTest={handleTest}
               />
             )}
-            {increaseItem < 1 && (
+            {test[item.id].itemNum < 1 && (
               <AddToCartButton
-                handleManipulateItem={handleManipulateItem}
-                increaseItem={increaseItem}
-                setIncreaseItem={setIncreaseItem}
                 item={item}
+                test={test}
+                handleTest={handleTest}
               />
             )}
           </div>
@@ -161,17 +156,14 @@ function CardDetails({
 }
 
 function AddToCartButton({
-  setIncreaseItem,
-  handleManipulateItem,
   item,
-  increaseItem,
+  handleTest,
 }) {
   return (
     <button
       className="add-to-cart"
       onClick={() => {
-        setIncreaseItem(increaseItem + 1);
-        handleManipulateItem(item);
+        handleTest(item, "increase")
       }}
     >
       Add to cart
@@ -180,28 +172,25 @@ function AddToCartButton({
 }
 
 function ControlItemInCart({
-  setIncreaseItem,
-  handleManipulateItem,
-  increaseItem,
   item,
+  test,
+  handleTest,
 }) {
   return (
     <div className="control-btns">
       <button
         className="add btn"
         onClick={() => {
-          setIncreaseItem(increaseItem + 1);
-          handleManipulateItem(item);
+          handleTest(item, "increase")
         }}
       >
         +
       </button>
-      <span className="number-of-items">{increaseItem}</span>
+      <span className="number-of-items">{test[item.id].itemNum}</span>
       <button
         className="minus btn"
         onClick={() => {
-          setIncreaseItem(increaseItem - 1);
-          handleManipulateItem(item, "Remove");
+          handleTest(item)
         }}
       >
         -
