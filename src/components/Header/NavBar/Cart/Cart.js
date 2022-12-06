@@ -2,31 +2,23 @@ import CartIcon from "../../../assets/cart.png";
 import { Card } from "../../../Home/MainContent/DiscountCard/DiscountCard";
 import "./Cart.css";
 
-export default function Cart({ handleCartDisplay, shoppingProducts }) {
-  // Gets total number of shoppingProductArray in cart obj.
-  const getTotalNumOfItems = () => {
-    let cartArray = [];
-    for (const item in shoppingProducts) {
-      if (shoppingProducts[item].itemNum > 0)
-        cartArray.push(shoppingProducts[item]);
-    }
-    return Object.values(cartArray)
-      .flat()
-      .reduce((total, product) => product.itemNum + total, 0);
-  };
+export default function Cart({ shoppingProducts }) {
+
+  // Gets number of added items to cart array
+  const { cartArray } = productToDisplayOnCartPage(shoppingProducts);
+
+  // Gets total number of all items in cart array
+  const { sumNumberOfItems } = getTotalNumOfItems(cartArray);
 
   return (
-    <div
-      className="cart-link"
-      onClick={handleCartDisplay}
-    >
+    <div className="cart-link">
       <div className="cart-icon">
         <img
           src={CartIcon}
           alt="cart icon"
         />
         <div className="cart-length">
-          <span>{getTotalNumOfItems()}</span>
+          <span>{sumNumberOfItems}</span>
         </div>
       </div>{" "}
       Cart
@@ -34,26 +26,34 @@ export default function Cart({ handleCartDisplay, shoppingProducts }) {
   );
 }
 
+// Gets total number of items in cart obj.
+function getTotalNumOfItems(cartArray) {
+  const sumNumberOfItems = Object.values(cartArray)
+    .flat()
+    .reduce((total, product) => product.itemNum + total, 0);
+  return { sumNumberOfItems };
+}
+
+// Function checks the shoppingProducts object for shoppingProductArray to be added to cart
+function productToDisplayOnCartPage(shoppingProducts) {
+  const cartArray = [];
+
+  // Checks if the number of item is greater then zero to add to cart array
+  for (const item in shoppingProducts) {
+    if (shoppingProducts[item].itemNum > 0)
+      cartArray.push(shoppingProducts[item]);
+  }
+
+  return { cartArray };
+}
+
 export function CartPage({
   shoppingProducts,
   shoppingProductArray,
   handleManipulateCartItem,
 }) {
-  // Function checks the shoppingProducts object for shoppingProductArray to be added to cart
-  const productToDisplayOnCartPage = () => {
-    const cartArray = [];
-
-    // Checks if the number of item is greater then zero to add to cart array
-    for (const item in shoppingProducts) {
-      if (shoppingProducts[item].itemNum > 0)
-        cartArray.push(shoppingProducts[item]);
-    }
-
-    return { cartArray };
-  };
-
   // Destructure to make cartArray available outside its scope
-  const { cartArray } = productToDisplayOnCartPage();
+  const { cartArray } = productToDisplayOnCartPage(shoppingProducts);
 
   const cartItems = cartArray.map((item) => (
     <Card
