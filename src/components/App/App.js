@@ -33,14 +33,33 @@ function App() {
     productArr();
   }, []);
 
-  function handleManipulateCartItem(product, addOrReduce) {
-    let updatedItemQuantity;
-    if (addOrReduce === "increase") {
-      updatedItemQuantity = shoppingProducts[product.id].itemNum + 1;
+  function handleManipulateCartItem(product, quantityChange) {
+    // Increases or decreases product quantity based on user choice
+    const updatedItemQuantity = calculateUpdatedQuantity(
+      product,
+      quantityChange
+    );
+
+    // Updates shopping product with new item quantity and total price
+    const updatedShoppingProducts = updateShoppingProducts(
+      product,
+      updatedItemQuantity
+    );
+
+    // Sets updated shopping product in state.
+    setShoppingProducts(updatedShoppingProducts);
+  }
+
+  function calculateUpdatedQuantity(product, quantityChange) {
+    if (quantityChange === "increase") {
+      return shoppingProducts[product.id].itemNum + 1;
     } else {
-      updatedItemQuantity = shoppingProducts[product.id].itemNum - 1;
+      return shoppingProducts[product.id].itemNum - 1;
     }
-    const testCopy = {
+  }
+
+  function updateShoppingProducts(product, updatedItemQuantity) {
+    return {
       ...shoppingProducts,
       [product.id]: {
         ...shoppingProducts[product.id],
@@ -48,7 +67,6 @@ function App() {
         totalPrice: updatedItemQuantity * product.price,
       },
     };
-    setShoppingProducts(testCopy);
   }
 
   const handleCartDisplay = () => {
