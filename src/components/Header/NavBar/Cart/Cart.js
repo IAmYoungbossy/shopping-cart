@@ -39,11 +39,21 @@ export function CartPage({
   items,
   handleManipulateCartItem,
 }) {
-  let cartArray = [];
-  for (const item in shoppingProducts) {
-    if (shoppingProducts[item].itemNum > 0)
-      cartArray.push(shoppingProducts[item]);
-  }
+  // Function checks the shoppingProducts object for items to be added to cart
+  const productToDisplayOnCartPage = () => {
+    const cartArray = [];
+
+    // Checks if the number of item is greater then zero to add to cart array
+    for (const item in shoppingProducts) {
+      if (shoppingProducts[item].itemNum > 0)
+        cartArray.push(shoppingProducts[item]);
+    }
+
+    return { cartArray };
+  };
+
+  // Destructure to make cartArray available outside its scope
+  const { cartArray } = productToDisplayOnCartPage();
 
   const cartItems = cartArray.map((item) => (
     <Card
