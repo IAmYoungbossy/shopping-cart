@@ -3,7 +3,7 @@ import { Card } from "../../../Home/MainContent/DiscountCard/DiscountCard";
 import "./Cart.css";
 
 export default function Cart({ handleCartDisplay, shoppingProducts }) {
-  // Gets total number of items in cart obj.
+  // Gets total number of shoppingProductArray in cart obj.
   const getTotalNumOfItems = () => {
     let cartArray = [];
     for (const item in shoppingProducts) {
@@ -36,10 +36,10 @@ export default function Cart({ handleCartDisplay, shoppingProducts }) {
 
 export function CartPage({
   shoppingProducts,
-  items,
+  shoppingProductArray,
   handleManipulateCartItem,
 }) {
-  // Function checks the shoppingProducts object for items to be added to cart
+  // Function checks the shoppingProducts object for shoppingProductArray to be added to cart
   const productToDisplayOnCartPage = () => {
     const cartArray = [];
 
@@ -57,7 +57,7 @@ export function CartPage({
 
   const cartItems = cartArray.map((item) => (
     <Card
-      items={items}
+      shoppingProductArray={shoppingProductArray}
       item={item.product}
       key={item.product.id}
       src={item.product.image}

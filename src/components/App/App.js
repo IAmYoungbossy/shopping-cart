@@ -74,12 +74,13 @@ function App() {
     };
   }
 
+  // Converts ShoppingProducts object to array for use with array methods
+  const getShoppingProductsArray = () => Object.values(shoppingProducts).flat();
+
   return (
     <Router>
       <div className="App">
-        <Header
-          shoppingProducts={shoppingProducts}
-        />
+        <Header shoppingProducts={shoppingProducts} />
         <Routes>
           <Route
             path="/"
@@ -90,7 +91,7 @@ function App() {
             element={
               <Shop
                 isLoaded={isLoaded}
-                items={Object.values(shoppingProducts).flat()}
+                shoppingProductArray={getShoppingProductsArray()}
                 shoppingProducts={shoppingProducts}
                 handleManipulateCartItem={handleManipulateCartItem}
               />
@@ -100,7 +101,7 @@ function App() {
             path="/cart"
             element={
               <CartPage
-                items={Object.values(shoppingProducts).flat()}
+                shoppingProductArray={getShoppingProductsArray()}
                 shoppingProducts={shoppingProducts}
                 handleManipulateCartItem={handleManipulateCartItem}
               />

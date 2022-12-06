@@ -5,9 +5,9 @@ import {
 import "./Shop.css";
 
 export default function Shop({ ...props }) {
-  const { isLoaded, items } = props;
+  const { isLoaded, shoppingProductArray } = props;
   
-  const productsCards = items.map((item) => (
+  const productsCards = shoppingProductArray.map((item) => (
     <Card
       {...props}
       item={item.product}
