@@ -38,15 +38,14 @@ nav > ul > li:last-of-type > div {
 }
 
 .display-cart > .discount {
-  width: 500px;
+  max-width: 500px;
   display: flex;
   flex-direction: row;
   margin: 10px auto;
   padding: 10px;
   border: 1px solid purple;
   position: relative;
-  min-width: 270px;
-  min-height: 140px;
+  width: 100%;
 }
 
 .discount-image {
@@ -68,6 +67,7 @@ nav > ul > li:last-of-type > div {
 .display-cart > .discount > .discount-desc {
   display: flex;
   flex-direction: column;
+  padding-top: 20px;
 }
 
 .display-cart > .discount > .discount-desc > small {
@@ -99,4 +99,13 @@ em {
   font-weight: 500;
   text-decoration: underline;
   margin-bottom: 30px;
+}
+
+.display-cart > .discount > .discount-desc > small > p.available {
+  position: absolute;
+  top: 5px;
+}
+
+.display-cart > .discount > div:last-of-type {
+  margin-top: 0;
 }
