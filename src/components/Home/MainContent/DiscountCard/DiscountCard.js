@@ -1,12 +1,24 @@
+import "./DiscountCard.css";
 import GreyStar from "../../../assets/greyStar.png";
 import GoldStar from "../../../assets/goldStar.png";
-import Watch from "../../../assets/watch.png";
-import Laptop from "../../../assets/laptop.png";
-import Speaker from "../../../assets/speaker.png";
-import Phone from "../../../assets/phone.png";
-import "./DiscountCard.css";
+import { discountProducts } from "./discountedProductArray";
 
 export default function DiscountCard() {
+  const displayDiscountedProduct = discountProducts.map((product) => (
+    <Card
+      key={product.id}
+      src={product.src}
+      alt={product.alt}
+      model={product.model}
+      brandName={product.brandName}
+      currentPrice={product.currentPrice}
+      proviousPrice={product.proviousPrice}
+      numberInStock={product.numberInStock}
+    >
+      <StarRating rating={product.rating} />
+    </Card>
+  ));
+
   return (
     <div>
       <div className="discount-header">
@@ -15,89 +27,12 @@ export default function DiscountCard() {
           <p>View All Products</p>
         </small>
       </div>
-      <div className="card-container">
-        <Card
-          model="Rolex Sky-Dweller 18kt White Gold/SS Champagne Dial 326933 2022 Complete"
-          src={Watch}
-          alt="A Watch"
-          brandName="ROLEX"
-          currentPrice="$1,234.54"
-          proviousPrice="$2,343.43"
-          numberInStock="5"
-        >
-          <StarRating rating={3} />
-        </Card>
-        <Card
-          model="Hp Pavilion 15- AMD Rymzn 3 -12GB RAM/1TB HDD 2.6GHz - 3.5GHz"
-          src={Laptop}
-          alt="A Laptop"
-          brandName="HP"
-          currentPrice="$1,644.50"
-          proviousPrice="$2,843.43"
-          numberInStock="51"
-        >
-          <StarRating rating={4} />
-        </Card>
-        <Card
-          model="Sound Bar Wireless Bluetooth Speaker Stereo Subwoofer Soundbar - Black/Grey"
-          src={Speaker}
-          alt="A Speak"
-          brandName="LG"
-          currentPrice="$874.50"
-          proviousPrice="$1,843.43"
-          numberInStock="51"
-        >
-          <StarRating rating={2} />
-        </Card>
-        <Card
-          model="Samsung Galaxy Note 10 Plus (Note 10+) 6.8-Inch SINGLE SIM 4,300 MAh Smartphone"
-          src={Phone}
-          alt="A Phone"
-          brandName="SAMSUNG"
-          currentPrice="$2874.50"
-          proviousPrice="$4,843.43"
-          numberInStock="3"
-        >
-          <StarRating rating={5} />
-        </Card>
-      </div>
+      <div className="card-container">{displayDiscountedProduct}</div>
     </div>
   );
 }
 
 export function Card({
-  src,
-  alt,
-  item,
-  model,
-  children,
-  brandName,
-  currentPrice,
-  proviousPrice,
-  numberInStock,
-  shoppingProducts,
-  handleManipulateCartItem,
-}) {
-  return (
-    <>
-      <CardDetails
-        src={src}
-        alt={alt}
-        item={item}
-        model={model}
-        children={children}
-        brandName={brandName}
-        currentPrice={currentPrice}
-        proviousPrice={proviousPrice}
-        numberInStock={numberInStock}
-        shoppingProducts={shoppingProducts}
-        handleManipulateCartItem={handleManipulateCartItem}
-      />
-    </>
-  );
-}
-
-function CardDetails({
   src,
   alt,
   item,
@@ -150,16 +85,25 @@ function CardDetails({
   );
 }
 
-function AddToCartButton({ item, handleManipulateCartItem }) {
+function Image({ src, alt }) {
   return (
-    <button
-      className="add-to-cart"
-      onClick={() => {
-        handleManipulateCartItem(item, "increase");
-      }}
-    >
-      Add to cart
-    </button>
+    <div className="discount-image">
+      <img
+        src={src}
+        alt={alt}
+      />
+    </div>
+  );
+}
+
+// Function conditional displays previous price before discount if previous
+// price is available
+function Price({ currentPrice, proviousPrice }) {
+  return (
+    <div className="price">
+      <p className="current-price">${currentPrice}</p>{" "}
+      {proviousPrice && <p className="previousPrice">${proviousPrice}</p>}
+    </div>
   );
 }
 
@@ -193,25 +137,16 @@ function ControlItemQuantityButtons({
   );
 }
 
-function Image({ src, alt }) {
+function AddToCartButton({ item, handleManipulateCartItem }) {
   return (
-    <div className="discount-image">
-      <img
-        src={src}
-        alt={alt}
-      />
-    </div>
-  );
-}
-
-// Function conditional displays previous price before discount if previous
-// price is available
-function Price({ currentPrice, proviousPrice }) {
-  return (
-    <div className="price">
-      <p className="current-price">${currentPrice}</p>{" "}
-      {proviousPrice && <p className="previousPrice">${proviousPrice}</p>}
-    </div>
+    <button
+      className="add-to-cart"
+      onClick={() => {
+        handleManipulateCartItem(item, "increase");
+      }}
+    >
+      Add to cart
+    </button>
   );
 }
 
