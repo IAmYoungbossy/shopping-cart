@@ -50,10 +50,6 @@ small {
   justify-content: flex-end;
 }
 
-.hero-image > img:first-child {
-  width: 415px;
-}
-
 @media screen and (max-width: 600px) {
   .App > section:first-of-type {
     display: flex;
