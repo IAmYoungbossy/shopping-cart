@@ -138,7 +138,7 @@ function ControlItemQuantityButtons({
   );
 }
 
-function AddToCartButton({ item, handleManipulateCartItem }) {
+export function AddToCartButton({ item, handleManipulateCartItem }) {
   return (
     <button
       className="add-to-cart"
@@ -168,7 +168,7 @@ function getGoldAndGreyStarRatio(rating) {
   const uncheckedStarCount = 5 - checkedStarCount;
 
   // Create arrays of gold and grey stars
-  const goldStars = duplicateStar(checkedStarCount, GoldStar)
+  const goldStars = duplicateStar(checkedStarCount, GoldStar);
   const greyStars = duplicateStar(uncheckedStarCount, GreyStar);
 
   // Combine the arrays of gold and grey stars and return them
