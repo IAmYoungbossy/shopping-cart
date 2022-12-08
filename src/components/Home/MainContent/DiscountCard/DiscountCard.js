@@ -168,7 +168,7 @@ function getGoldAndGreyStarRatio(rating) {
   const uncheckedStarCount = 5 - checkedStarCount;
 
   // Create arrays of gold and grey stars
-  const goldStars = duplicateStar(checkedStarCount, GoldStar);
+  const goldStars = duplicateStar(checkedStarCount, GoldStar)
   const greyStars = duplicateStar(uncheckedStarCount, GreyStar);
 
   // Combine the arrays of gold and grey stars and return them
@@ -187,7 +187,7 @@ function duplicateStar(maxNumOfStar, src) {
       <img
         key={uniqid()}
         src={src}
-        alt="star"
+        alt={src === GoldStar ? "gold-star" : "grey-star"}
       />
     );
   }
