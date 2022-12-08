@@ -25,15 +25,8 @@ export default function Cart({ shoppingProducts }) {
   );
 }
 
-// Gets total number of items in cart obj.
-function getTotalNumOfItems(cartArray) {
-  const sumNumberOfItems = Object.values(cartArray)
-    .flat()
-    .reduce((total, product) => product.itemNum + total, 0);
-  return { sumNumberOfItems };
-}
-
-// Function checks the shoppingProducts object for shoppingProductArray to be added to cart
+// Function checks the shoppingProducts object 
+// if a arpoduct meets a condition then it's added to cartArray
 function productToDisplayOnCartPage(shoppingProducts) {
   const cartArray = [];
 
@@ -44,6 +37,14 @@ function productToDisplayOnCartPage(shoppingProducts) {
   }
 
   return { cartArray };
+}
+
+// Gets total number of items in cart obj.
+function getTotalNumOfItems(cartArray) {
+  const sumNumberOfItems = Object.values(cartArray)
+    .flat()
+    .reduce((total, product) => product.itemNum + total, 0);
+  return { sumNumberOfItems };
 }
 
 export function CartPage({
