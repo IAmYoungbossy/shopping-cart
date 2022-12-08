@@ -9,10 +9,10 @@ export default function HeroSection() {
           <p>25% OFF PROMOTIONAL SALE</p>
         </small>
 
-        <h1>All you need in the kitchen.</h1>
+        <h1>All you need for your glamour.</h1>
         <p>
           For your glamourous lifestyle, all you will ever need is the
-          FakeStore. In this place you can't can't actually purchase anything so
+          FakeKedu. In this place you can't actually purchase anything so
           your money stays with you.
         </p>
         <button>Browse Product</button>
