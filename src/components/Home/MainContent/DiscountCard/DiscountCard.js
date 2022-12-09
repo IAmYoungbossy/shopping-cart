@@ -108,7 +108,7 @@ function Price({ currentPrice, proviousPrice }) {
   );
 }
 
-function ControlItemQuantityButtons({
+export function ControlItemQuantityButtons({
   item,
   shoppingProducts,
   handleManipulateCartItem,
