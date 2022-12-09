@@ -99,7 +99,7 @@ function Image({ src, alt }) {
 
 // Function conditional displays previous price before discount if previous
 // price is available
-function Price({ currentPrice, proviousPrice }) {
+export function Price({ currentPrice, proviousPrice }) {
   return (
     <div className="price">
       <p className="current-price">${currentPrice}</p>{" "}
