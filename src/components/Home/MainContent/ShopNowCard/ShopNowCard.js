@@ -39,7 +39,7 @@ const CardImage = ({ src, alt }) => (
   />
 );
 
-function ShopCard({ title, desc, alt, src }) {
+export function ShopCard({ title, desc, alt, src }) {
   return (
     <div>
       <div className="card-text-div">

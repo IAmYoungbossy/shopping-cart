@@ -4,23 +4,26 @@ import { StarRating } from "../Card/StarRating/StarRating";
 
 export default function Shop({ ...props }) {
   const { isLoaded, shoppingProductArray } = props;
-  
-  // Maps each item in array to Card component for display
-  const productsCards = shoppingProductArray.map((item) => (
-    <Card
-      {...props}
-      item={item.product}
-      key={item.product.id}
-      src={item.product.image}
-      model={item.product.title}
-      alt={item.product.category}
-      brandName={item.product.category}
-      currentPrice={item.product.price}
-      numberInStock={item.product.rating.count}
-    >
-      <StarRating rating={item.product.rating.rate} />
-    </Card>
-  ));
+
+  let productsCards;
+  if (shoppingProductArray) {
+    // Maps each item in array to Card component for display
+    productsCards = shoppingProductArray.map((item) => (
+      <Card
+        {...props}
+        item={item.product}
+        key={item.product.id}
+        src={item.product.image}
+        model={item.product.title}
+        alt={item.product.category}
+        brandName={item.product.category}
+        currentPrice={item.product.price}
+        numberInStock={item.product.rating.count}
+      >
+        <StarRating rating={item.product.rating.rate} />
+      </Card>
+    ));
+  }
 
   return (
     <>

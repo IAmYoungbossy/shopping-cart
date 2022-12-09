@@ -30,7 +30,7 @@ export default function PromotionSection() {
   );
 }
 
-function PromoCards({ src, alt }) {
+export function PromoCards({ src, alt }) {
   return (
     <div className="promo-card">
       <div className="promo-image">
