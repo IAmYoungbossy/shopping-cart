@@ -5,21 +5,21 @@ import Sofa from "../../../assets/sofa.png";
 export default function ShopNowCard() {
   return (
     <div>
-      <Card
+      <ShopCard
         desc="this is the one stop shop for your need. Look no further."
         className="card-text-div"
         title="Fashion"
         src={Sneaker}
         alt="Sneaker"
       />
-      <Card
+      <ShopCard
         desc="this is the one stop shop for your need. Look no further."
         className="card-text-div"
         title="Electronics"
         src={Headset}
         alt="Headset"
       />
-      <Card
+      <ShopCard
         desc="this is the one stop shop for your need. Look no further."
         className="card-text-div"
         title="Funiture"
@@ -39,7 +39,7 @@ const CardImage = ({ src, alt }) => (
   />
 );
 
-function Card({ title, desc, alt, src }) {
+function ShopCard({ title, desc, alt, src }) {
   return (
     <div>
       <div className="card-text-div">

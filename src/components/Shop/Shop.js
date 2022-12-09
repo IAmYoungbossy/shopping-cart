@@ -1,8 +1,6 @@
-import {
-  Card,
-  StarRating,
-} from "../Home/MainContent/DiscountCard/DiscountCard";
 import "./Shop.css";
+import { Card } from "../Card/Card";
+import { StarRating } from "../Card/StarRating/StarRating";
 
 export default function Shop({ ...props }) {
   const { isLoaded, shoppingProductArray } = props;

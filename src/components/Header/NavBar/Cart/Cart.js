@@ -1,5 +1,5 @@
 import CartIcon from "../../../assets/cart.png";
-import { Card } from "../../../Home/MainContent/DiscountCard/DiscountCard";
+import { Card } from "../../../Card/Card";
 import "./Cart.css";
 
 export default function Cart({ shoppingProducts }) {
