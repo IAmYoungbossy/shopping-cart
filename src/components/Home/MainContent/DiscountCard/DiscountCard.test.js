@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import {
   AddToCartButton,
   ControlItemQuantityButtons,
+  Image,
   Price,
   StarRating,
 } from "./DiscountCard";
@@ -114,5 +115,16 @@ describe("Card Component", () => {
       render(<Price currentPrice={9.99} />);
       expect(screen.queryByText("$14.99")).not.toBeInTheDocument();
     });
+  });
+
+  describe("Image component", () => {
+    render(
+      <Image
+        src="goldStar"
+        alt="star"
+      />
+    );
+    const img = screen.getByRole("img");
+    expect(img).toBeInTheDocument();
   });
 });

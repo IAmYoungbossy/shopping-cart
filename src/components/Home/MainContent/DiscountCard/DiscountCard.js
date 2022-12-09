@@ -86,7 +86,7 @@ export function Card({
   );
 }
 
-function Image({ src, alt }) {
+export function Image({ src, alt }) {
   return (
     <div className="discount-image">
       <img
