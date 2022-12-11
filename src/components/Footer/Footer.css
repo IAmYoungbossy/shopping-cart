@@ -2,7 +2,7 @@ footer {
   gap: 20px;
   display: flex;
   flex-wrap: wrap;
-  padding: 20px 10px;
+  padding: 20px 20px;
   margin-bottom: 10px;
   justify-content: space-between;
 }

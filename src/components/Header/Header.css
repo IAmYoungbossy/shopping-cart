@@ -1,13 +1,15 @@
 header {
   display: flex;
   flex-wrap: wrap;
-  padding: 20px 0;
+  padding: 10px 20px;
   align-items: center;
   justify-content: space-around;
 }
- header > h1 {
-  flex: 8;
- }
+header > h1 {
+  flex: 8 1;
+  width: fit-content;
+  text-decoration: underline;
+}
 
  a {
   text-decoration: none;

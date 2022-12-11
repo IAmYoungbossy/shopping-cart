@@ -1,10 +1,11 @@
 .card-container {
+  background-color: #edebeb;
   row-gap: 15px;
   display: flex;
   padding: 10px;
-  border: 1px solid purple;
   flex-wrap: wrap;
   justify-content: space-between;
+  background-image: linear-gradient(180deg, #ffffff, transparent);
 }
 
 .card-container > div:nth-child(3) > div:first-of-type {
@@ -30,7 +31,8 @@
 .discount-header {
   gap: 10px;
   display: flex;
-  margin-bottom: 25px;
+  padding: 0 20px;
+  margin-bottom: 10px;
   align-items: center;
   justify-content: space-between;
 }
@@ -38,10 +40,6 @@
 .discount-header > p {
   font-weight: 900;
   font-size: 2rem;
-}
-
-main > div:nth-child(2) {
-  margin-top: 50px;
 }
 
 .discount-desc > p:last-of-type {
@@ -62,4 +60,8 @@ main > div:nth-child(2) {
   display: flex;
   margin-bottom: 10px;
   justify-content: space-between;
+}
+
+main > div:nth-child(2) {
+  background-color: #ffffff;
 }

@@ -1,6 +1,7 @@
 import Sneaker from "../../../assets/sneaker.png";
 import Headset from "../../../assets/headset.png";
 import Sofa from "../../../assets/sofa.png";
+import "./ShopNowCard.css";
 
 export default function ShopNowCard() {
   return (
