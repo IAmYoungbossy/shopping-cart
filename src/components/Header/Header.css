@@ -1,16 +1,30 @@
+@import url(https://fonts.googleapis.com/css?family=Sofia);
+
 header {
+  gap: 8px;
   display: flex;
   flex-wrap: wrap;
-  padding: 10px 20px;
+  padding: 10px 0px;
   align-items: center;
   justify-content: space-around;
 }
 header > h1 {
   flex: 8 1;
   width: fit-content;
-  text-decoration: underline;
+  display: flex;
+  font-family: "Sofia", sans-serif;
 }
 
- a {
+h1 > span {
+  background-color: #123;
+  padding: 4px 20px;
+  color: white;
+  font-size: 1.2rem;
+}
+
+a {
   text-decoration: none;
+  color: white;
+  font-weight: 900;
+  font-family: "Sofia", sans-serif;
 }

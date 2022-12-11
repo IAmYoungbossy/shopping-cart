@@ -7,6 +7,8 @@ nav ul {
 }
 
 nav {
-  flex: 1;
+  flex: 1 1;
   min-width: 193px;
+  padding: 3px 20px;
+  background-color: #123;
 }

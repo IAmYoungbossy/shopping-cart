@@ -1,14 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
 .App > section:first-of-type {
   padding: 0 20px;
   color: #ffffff;
   display: flex;
   min-height: min-content;
-  background: radial-gradient( at -160%,
+  background: radial-gradient(
+    at -160%,
     #341406e8,
     #2c2c4a 5%,
     #000000 75%,
-    #123 75%);
-  box-shadow: 1px 1px 1px #123;
+    #123 75%
+  );
+  z-index: 1;
 }
 
 small {
@@ -28,10 +32,10 @@ small {
   align-self: flex-start;
   width: fit-content;
   border: none;
-  background-color: #4e3169;
+  background-color: #3e0078;
   color: whitesmoke;
   font-weight: 900;
-  box-shadow: 1px 1px 1px 1px black;
+  box-shadow: 0px 0px 3px 0px #c2975f;
 }
 
 .hero-text > p:last-of-type {
@@ -56,11 +60,14 @@ small {
 }
 
 .hero-text > p:nth-of-type(1) {
+  color: #fff6e8;
   padding: 5px 0;
+  font-family: "Open Sans", serif;
 }
 
 .hero-text > h1 {
   font-size: min(2.5rem, 5vw);
+  font-family: "Open Sans", serif;
 }
 
 .hero-image {

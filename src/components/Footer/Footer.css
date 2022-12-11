@@ -1,10 +1,12 @@
 footer {
   gap: 20px;
+  color: white;
   display: flex;
   flex-wrap: wrap;
-  padding: 20px 20px;
+  padding: 70px 20px;
   margin-bottom: 10px;
   justify-content: space-between;
+  background: radial-gradient( at 22%, #341406e8, #2c2c4a 5%, #123 74%, #1230 75% );
 }
 
 .link {
