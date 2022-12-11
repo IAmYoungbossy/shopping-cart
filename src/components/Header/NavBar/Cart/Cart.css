@@ -109,3 +109,8 @@ em {
 .display-cart > .discount > div:last-of-type {
   margin-top: 0;
 }
+
+p.no-item {
+  text-align: center;
+  font-size: larger;
+}

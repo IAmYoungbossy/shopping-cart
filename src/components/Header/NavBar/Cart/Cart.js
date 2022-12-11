@@ -25,7 +25,7 @@ export default function Cart({ shoppingProducts }) {
   );
 }
 
-// Function checks the shoppingProducts object 
+// Function checks the shoppingProducts object
 // if a arpoduct meets a condition then it's added to cartArray
 function productToDisplayOnCartPage(shoppingProducts) {
   const cartArray = [];
@@ -73,7 +73,7 @@ export function CartPage({
       handleManipulateCartItem={handleManipulateCartItem}
     >
       <SubTotal
-        totalPrice={item.totalPrice}
+        totalPrice={Math.round(item.totalPrice * 100) / 100}
         itemNum={item.itemNum}
       />{" "}
     </Card>
@@ -83,7 +83,10 @@ export function CartPage({
     <div className="display-cart">
       {" "}
       <h2>Items In Cart</h2>
-      <h3>Sum Total: ${sumPriceOfItems}</h3> {cartItems}
+      <h3>Sum Total: ${Math.round(sumPriceOfItems * 100) / 100}</h3> {cartItems}{" "}
+      {cartArray.length < 1 && (
+        <p className="no-item">Oops, no item in cart.</p>
+      )}
     </div>
   );
 }
