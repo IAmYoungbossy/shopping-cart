@@ -4,7 +4,7 @@
   justify-content: space-between;
   margin: 0 auto;
   align-items: center;
-  font-family: 'Sofia';
+  font-family: "Sofia";
   padding: 20px;
   width: 200px;
   height: 300px;
@@ -70,4 +70,10 @@ main > div:nth-child(3) {
 
 .promo-card-wrapper > div:nth-child(2) > div:first-of-type > img {
   width: 100px;
+}
+
+.promo-header > small > p,
+.discount-header > small > p {
+  color: #185318;
+  font-weight: 900;
 }

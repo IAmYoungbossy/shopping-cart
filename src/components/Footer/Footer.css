@@ -1,12 +1,12 @@
 footer {
   gap: 20px;
-  color: white;
+  color: aqua;
   display: flex;
   flex-wrap: wrap;
   padding: 70px 20px;
   margin-bottom: 10px;
   justify-content: space-between;
-  background: radial-gradient( at 22%, #341406e8, #2c2c4a 5%, #123 74%, #1230 75% );
+  background: radial-gradient( at -140%, #123 0%, #000 81%, #1230 82% );
 }
 
 .link {
@@ -19,6 +19,25 @@ footer {
 
 .mailing {
   flex: 1;
+}
+
+input[type="text"] {
+  padding: 5px;
+  outline: none;
+  border: none;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.input > button {
+  margin-top: 5px;
+  padding: 4px 10px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px solid;
+  background-color: #293365;
+  color: white;
+  font-weight: 900;
 }
 
 footer li {
