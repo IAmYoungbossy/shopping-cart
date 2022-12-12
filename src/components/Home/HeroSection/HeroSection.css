@@ -1,18 +1,23 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 .App > section:first-of-type {
-  padding: 0 20px;
   color: #ffffff;
-  display: flex;
-  min-height: min-content;
   background: radial-gradient(
-    at -160%,
-    #341406e8,
-    #2c2c4a 5%,
-    #000000 74%,
-    #123 75%
-  );
+  at -160%,
+  #341406e8,
+  #2c2c4a 5%,
+  #000000 74%,
+  #123 75%
+);
   z-index: 1;
+}
+
+.center-page {
+  display: flex;
+  max-width: 1000px;
+  margin: auto;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 small {
@@ -76,11 +81,11 @@ small {
 }
 
 @media screen and (max-width: 600px) {
-  .App > section:first-of-type {
+  section > div {
     display: flex;
     min-height: min-content;
     flex-direction: column;
-  }
+}
   .hero-text {
     max-width: 450px;
     margin: auto;

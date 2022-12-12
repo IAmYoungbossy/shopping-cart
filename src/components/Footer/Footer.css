@@ -1,12 +1,15 @@
 footer {
+  background: radial-gradient(at -140%, #123 0%, #000 81%, #1230 82%);
+}
+
+footer > div {
   gap: 20px;
   color: aqua;
   display: flex;
   flex-wrap: wrap;
-  padding: 70px 20px;
+  padding: 70px 0;
   margin-bottom: 10px;
   justify-content: space-between;
-  background: radial-gradient( at -140%, #123 0%, #000 81%, #1230 82% );
 }
 
 .link {

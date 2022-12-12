@@ -28,7 +28,7 @@ export default function Shop({ ...props }) {
   return (
     <>
       <h2 className="shop-header">Products Available</h2>
-      {isLoaded && <div className="shop">{productsCards}</div>}
+      {isLoaded && <div className="shop center-page">{productsCards}</div>}
     </>
   );
 }

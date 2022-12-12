@@ -26,8 +26,15 @@ main > div:nth-child(3) {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  padding: 0 20px;
+  /* padding: 0 20px; */
   padding-top: 15px;
+  justify-content: space-between;
+}
+
+.promo-header > div {
+  display: flex;
+  align-items: center;
+  width: 100%;
   justify-content: space-between;
 }
 
@@ -50,7 +57,7 @@ main > div:nth-child(3) {
   box-shadow: 1px 1px 2px black;
 }
 
-.promo-card-wrapper {
+.promo-card-wrapper > div {
   gap: 20px;
   flex-wrap: wrap;
   display: flex;

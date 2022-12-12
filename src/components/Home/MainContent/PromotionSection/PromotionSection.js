@@ -7,24 +7,28 @@ export default function PromotionSection() {
   return (
     <div>
       <div className="promo-header">
-        <h2>Active Promotions</h2>
-        <small>
-          <p>View All Promotions</p>
-        </small>
+        <div className="center-page">
+          <h2>Active Promotions</h2>
+          <small>
+            <p>View All Promotions</p>
+          </small>
+        </div>
       </div>
       <div className="promo-card-wrapper">
-        <PromoCards
-          src={ManFashion}
-          alt="Male model"
-        />
-        <PromoCards
-          src={Perfume}
-          alt="Perfume"
-        />
-        <PromoCards
-          src={Woman}
-          alt="Female Fashion"
-        />
+        <div className="center-page">
+          <PromoCards
+            src={ManFashion}
+            alt="Male model"
+          />
+          <PromoCards
+            src={Perfume}
+            alt="Perfume"
+          />
+          <PromoCards
+            src={Woman}
+            alt="Female Fashion"
+          />
+        </div>
       </div>
     </div>
   );

@@ -21,13 +21,18 @@ export default function DiscountCard() {
 
   return (
     <div>
+      <div className="center-page">
       <div className="discount-header">
         <p>Recent Discount</p>
         <small>
           <p>View All Products</p>
         </small>
       </div>
-      <div className="card-container">{displayDiscountedProduct}</div>
+      </div>
+      <div className="card-container">
+        {" "}
+        <div className="center-page">{displayDiscountedProduct}</div>{" "}
+      </div>
     </div>
   );
 }

@@ -1,14 +1,19 @@
 @import url(https://fonts.googleapis.com/css?family=Sofia);
 
-header {
-  gap: 8px;
+header > div {
+  gap: 5px;
   display: flex;
   flex-wrap: wrap;
   padding: 10px 0px;
   align-items: center;
   justify-content: space-around;
 }
-header > h1 {
+
+header {
+  background-color: #edebeb;
+}
+
+header h1 {
   flex: 8 1;
   width: fit-content;
   display: flex;

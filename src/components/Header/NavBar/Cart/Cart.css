@@ -89,7 +89,12 @@ em {
   align-items: center;
 }
 
+.display-cart {
+  padding: 5px;
+}
+
 .display-cart > h2 {
+  margin-top: 15px;
   text-align: center;
 }
 

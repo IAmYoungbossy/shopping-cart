@@ -6,6 +6,7 @@ import "./ShopNowCard.css";
 export default function ShopNowCard() {
   return (
     <div>
+      <div className="center-page">
       <ShopCard
         desc="this is the one stop shop for your need. Look no further."
         className="card-text-div"
@@ -27,6 +28,7 @@ export default function ShopNowCard() {
         src={Sofa}
         alt="sofa"
       />
+      </div>
     </div>
   );
 }

@@ -3,8 +3,10 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <footer>
-      <MailingList />
-      <NavigationLinks />
+      <div className="center-page">
+        <MailingList />
+        <NavigationLinks />
+      </div>
     </footer>
   );
 }
