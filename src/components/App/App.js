@@ -46,13 +46,17 @@ function App() {
     );
 
     // Updates shopping product with new item quantity and total price
-    const updatedShoppingProducts = updateShoppingProducts(
-      product,
-      updatedItemQuantity
-    );
+    const updatedShoppingProducts = (prevShoppingProducts) =>
+      updateShoppingProducts(
+        product,
+        updatedItemQuantity,
+        prevShoppingProducts
+      );
 
     // Sets updated shopping product in state.
-    setShoppingProducts(updatedShoppingProducts);
+    setShoppingProducts((prevShoppingProducts) =>
+      updatedShoppingProducts(prevShoppingProducts)
+    );
   }
 
   function calculateUpdatedQuantity(product, quantityChange) {
@@ -63,11 +67,15 @@ function App() {
     }
   }
 
-  function updateShoppingProducts(product, updatedItemQuantity) {
+  function updateShoppingProducts(
+    product,
+    updatedItemQuantity,
+    prevShoppingProducts
+  ) {
     return {
-      ...shoppingProducts,
+      ...prevShoppingProducts,
       [product.id]: {
-        ...shoppingProducts[product.id],
+        ...prevShoppingProducts[product.id],
         itemNum: updatedItemQuantity,
         totalPrice: updatedItemQuantity * product.price,
       },
