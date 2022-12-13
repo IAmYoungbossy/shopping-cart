@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.9eebd563.css",
+    "main.js": "/shopping-cart/static/js/main.e30830cc.js",
+    "static/js/787.d6fe38e8.chunk.js": "/shopping-cart/static/js/787.d6fe38e8.chunk.js",
+    "static/media/black-culture.png": "/shopping-cart/static/media/black-culture.f895546f01c7a685db51.png",
+    "static/media/perfume.png": "/shopping-cart/static/media/perfume.6ddf556fdaeee8192e6a.png",
+    "static/media/man.png": "/shopping-cart/static/media/man.50b92d6a6edfdb935458.png",
+    "static/media/sneaker.png": "/shopping-cart/static/media/sneaker.30e77e89e0d781693af6.png",
+    "static/media/headset.png": "/shopping-cart/static/media/headset.5da5dc76ba13220d99bd.png",
+    "static/media/woman.png": "/shopping-cart/static/media/woman.efe0e0bc86de82f03632.png",
+    "static/media/phone.png": "/shopping-cart/static/media/phone.525d59f1966126dc16f4.png",
+    "static/media/sofa.png": "/shopping-cart/static/media/sofa.685908a20a6160055f7c.png",
+    "static/media/speaker.png": "/shopping-cart/static/media/speaker.1ab13de03f67d0958f04.png",
+    "static/media/watch.png": "/shopping-cart/static/media/watch.19784cf2f469ec2757c2.png",
+    "static/media/laptop.png": "/shopping-cart/static/media/laptop.33519b0af0501f10aee3.png",
+    "index.html": "/shopping-cart/index.html",
+    "main.9eebd563.css.map": "/shopping-cart/static/css/main.9eebd563.css.map",
+    "main.e30830cc.js.map": "/shopping-cart/static/js/main.e30830cc.js.map",
+    "787.d6fe38e8.chunk.js.map": "/shopping-cart/static/js/787.d6fe38e8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9eebd563.css",
+    "static/js/main.e30830cc.js"
+  ]
+}
