@@ -79,8 +79,18 @@ main > div:nth-child(3) {
   width: 100px;
 }
 
-.promo-header > small > p,
+.promo-header > .center-page > small > p,
 .discount-header > small > p {
   color: #185318;
   font-weight: 900;
+  cursor: pointer;
+}
+
+.promo-header > .center-page > small > p:hover,
+.discount-header > small > p:hover {
+  color: red;
+}
+
+.promo-text > button:hover {
+  border: none;
 }

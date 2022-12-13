@@ -17,6 +17,16 @@
   min-width: 170px;
   padding: 10px;
   padding-top: 2px;
+  box-shadow: 1px 1px 2px 0px;
+}
+
+.discount {
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.discount:hover {
+  transform: scale(1.02);
 }
 
 .shop > .discount > .discount-image > img {
@@ -59,8 +69,10 @@ h2.shop-header {
   font-size: 1.2rem;
   font-weight: bold;
   padding: 0 5px;
-  border: 1px solid purple;
-  background-color: transparent;
+  border: none;
+  background-color: #3e0078;
+  border: 1px solid #1428b9;
+  color: white;
 }
 
 span.number-of-items {
@@ -80,10 +92,12 @@ button.add-to-cart {
 
 .control-btns > button:first-of-type {
   border-right: none;
+  width: 25px;
 }
 
 .control-btns > button:last-of-type {
   border-left: none;
+  width: 25px;
 }
 
 span.number-of-items {
@@ -93,7 +107,8 @@ span.number-of-items {
 button.add-to-cart {
   border: 1px solid purple;
   padding: 4.5px 4px;
-  background-color: transparent;
+  background-color: #3e0078;
   font-weight: bold;
   width: 85px;
+  color: white;
 }

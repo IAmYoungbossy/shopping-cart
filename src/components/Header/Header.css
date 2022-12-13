@@ -8,9 +8,20 @@ header > div {
   align-items: center;
   justify-content: space-around;
 }
-
 header {
   background-color: #edebeb;
+  border-bottom: 5px solid #3e0078;
+}
+
+button:hover {
+background-color: #1428b9;
+border: none;
+cursor: pointer;
+border: 1px solid #1428b9;
+}
+
+a:hover, h1 > span:hover {
+  color: rgb(0, 200, 255);
 }
 
 header h1 {
@@ -25,6 +36,7 @@ h1 > span {
   padding: 4px 20px;
   color: white;
   font-size: 1.2rem;
+  cursor: pointer;
 }
 
 a {
