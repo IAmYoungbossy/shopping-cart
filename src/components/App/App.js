@@ -87,7 +87,7 @@ function App() {
   const getShoppingProductsArray = () => Object.values(shoppingProducts).flat();
 
   return (
-    <Router>
+    <Router basename="/">
       <div className="App">
         <Header shoppingProducts={shoppingProducts} />
         <Routes>
