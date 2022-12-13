@@ -2,6 +2,7 @@ import "./DiscountCard.css";
 import { Card } from "../../../Card/Card";
 import { StarRating } from "../../../Card/StarRating/StarRating";
 import { discountProducts } from "./discountedProductArray";
+import { Link } from "react-router-dom";
 
 export default function DiscountCard() {
   const displayDiscountedProduct = discountProducts.map((product) => (
@@ -22,12 +23,14 @@ export default function DiscountCard() {
   return (
     <div>
       <div className="center-page">
-      <div className="discount-header">
-        <p>Recent Discount</p>
-        <small>
-          <p>View All Products</p>
-        </small>
-      </div>
+        <div className="discount-header">
+          <p>Recent Discount</p>
+          <small>
+            <p>
+              <Link to="/shop">View All Products</Link>
+            </p>
+          </small>
+        </div>
       </div>
       <div className="card-container">
         {" "}

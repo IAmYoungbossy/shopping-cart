@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import getProductData from "../../fetchProductData";
 import { CartPage } from "../Header/NavBar/Cart/Cart";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import PageNotFound from "../Shop/PageNotFound/PageNotFound";
 
 function App() {
   const [shoppingProducts, setShoppingProducts] = useState({});
@@ -114,6 +115,10 @@ function App() {
                 handleManipulateCartItem={handleManipulateCartItem}
               />
             }
+          />
+          <Route
+            path="*"
+            element={<PageNotFound />}
           />
         </Routes>
         <Footer />

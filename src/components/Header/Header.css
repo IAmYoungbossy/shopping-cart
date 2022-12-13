@@ -17,10 +17,9 @@ button:hover {
 background-color: #1428b9;
 border: none;
 cursor: pointer;
-border: 1px solid #1428b9;
 }
 
-a:hover, h1 > span:hover {
+nav > ul > li > a:hover, h1 > span > a:hover {
   color: rgb(0, 200, 255);
 }
 

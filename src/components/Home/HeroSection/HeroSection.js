@@ -1,5 +1,6 @@
 import "./HeroSection.css";
 import Africa from "../../assets/black-culture.png";
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   return (
@@ -16,7 +17,7 @@ export default function HeroSection() {
             FakeKedu. In this place you can't actually purchase anything so your
             money stays with you.
           </p>
-          <button>Browse Product</button>
+          <button><Link to="/shop">Browse Product</Link></button>
           <p>Talk to an assistance</p>
         </div>
         <div className="hero-image">

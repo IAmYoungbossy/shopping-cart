@@ -2,6 +2,7 @@ import "./PromotionSection.css";
 import ManFashion from "../../../assets/man.png";
 import Perfume from "../../../assets/perfume.png";
 import Woman from "../../../assets/woman.png";
+import { Link } from "react-router-dom";
 
 export default function PromotionSection() {
   return (
@@ -10,7 +11,9 @@ export default function PromotionSection() {
         <div className="center-page">
           <h2>Active Promotions</h2>
           <small>
-            <p>View All Promotions</p>
+            <p>
+              <Link to="/shop">View All Promotions</Link>
+            </p>
           </small>
         </div>
       </div>
@@ -45,7 +48,9 @@ export function PromoCards({ src, alt }) {
       </div>
       <div className="promo-text">
         <p>Upto 25% off all casual wears</p>
-        <button>Browse Products</button>
+        <button>
+          <Link to="/shop">Browse Products</Link>
+        </button>
       </div>
     </div>
   );

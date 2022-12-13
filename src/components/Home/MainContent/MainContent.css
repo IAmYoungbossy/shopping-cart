@@ -45,6 +45,10 @@ main {
   box-shadow: 1px 1px 1px 0px black;
 }
 
+.card-text-div > button > a{
+  font-family: "Open Sans", serif;
+}
+
 .card-image-div {
   display: flex;
   justify-content: center;

@@ -21,7 +21,7 @@
 }
 
 .discount {
-  transition: all 0.4s ease-in-out;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
 
@@ -105,7 +105,7 @@ span.number-of-items {
 }
 
 button.add-to-cart {
-  border: 1px solid purple;
+  border: none;
   padding: 4.5px 4px;
   background-color: #3e0078;
   font-weight: bold;

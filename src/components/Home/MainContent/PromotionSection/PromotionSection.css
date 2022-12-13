@@ -57,6 +57,10 @@ main > div:nth-child(3) {
   box-shadow: 1px 1px 2px black;
 }
 
+.promo-text > button > a {
+  font-family: "Open Sans", serif;
+}
+
 .promo-card-wrapper > div {
   gap: 20px;
   flex-wrap: wrap;
@@ -79,15 +83,16 @@ main > div:nth-child(3) {
   width: 100px;
 }
 
-.promo-header > .center-page > small > p,
-.discount-header > small > p {
+.promo-header > .center-page > small > p > a,
+.discount-header > small > p > a {
   color: #185318;
   font-weight: 900;
   cursor: pointer;
+  font-family: "Open sans", serif;
 }
 
-.promo-header > .center-page > small > p:hover,
-.discount-header > small > p:hover {
+.promo-header > .center-page > small > p > a:hover,
+.discount-header > small > p > a:hover {
   color: red;
 }
 
