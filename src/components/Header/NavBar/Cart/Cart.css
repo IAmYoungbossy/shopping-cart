@@ -110,6 +110,10 @@ button.delete {
   right: 15px;
 }
 
+button.delete:hover {
+  background-color: #bec6ff;
+}
+
 .display-cart > h3 {
   text-align: center;
   font-size: 1rem;
