@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/shopping-cart/static/css/main.39eecaed.css",
-    "main.js": "/shopping-cart/static/js/main.0d0f6631.js",
+    "main.css": "/shopping-cart/static/css/main.48ccf72e.css",
+    "main.js": "/shopping-cart/static/js/main.e2df44c2.js",
     "static/js/787.d6fe38e8.chunk.js": "/shopping-cart/static/js/787.d6fe38e8.chunk.js",
     "static/media/black-culture.png": "/shopping-cart/static/media/black-culture.f895546f01c7a685db51.png",
     "static/media/perfume.png": "/shopping-cart/static/media/perfume.6ddf556fdaeee8192e6a.png",
@@ -15,12 +15,12 @@
     "static/media/watch.png": "/shopping-cart/static/media/watch.19784cf2f469ec2757c2.png",
     "static/media/laptop.png": "/shopping-cart/static/media/laptop.33519b0af0501f10aee3.png",
     "index.html": "/shopping-cart/index.html",
-    "main.39eecaed.css.map": "/shopping-cart/static/css/main.39eecaed.css.map",
-    "main.0d0f6631.js.map": "/shopping-cart/static/js/main.0d0f6631.js.map",
+    "main.48ccf72e.css.map": "/shopping-cart/static/css/main.48ccf72e.css.map",
+    "main.e2df44c2.js.map": "/shopping-cart/static/js/main.e2df44c2.js.map",
     "787.d6fe38e8.chunk.js.map": "/shopping-cart/static/js/787.d6fe38e8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.39eecaed.css",
-    "static/js/main.0d0f6631.js"
+    "static/css/main.48ccf72e.css",
+    "static/js/main.e2df44c2.js"
   ]
 }
