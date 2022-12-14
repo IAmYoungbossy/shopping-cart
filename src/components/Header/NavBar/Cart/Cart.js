@@ -1,5 +1,6 @@
 import CartIcon from "../../../assets/cart.png";
 import { Card } from "../../../Card/Card";
+import Delete from "../../../assets/delete.png";
 import "./Cart.css";
 
 export default function Cart({ shoppingProducts }) {
@@ -76,6 +77,12 @@ export function CartPage({
         totalPrice={Math.round(item.totalPrice * 100) / 100}
         itemNum={item.itemNum}
       />{" "}
+      <DeleteItemFromCart
+        handleManipulateCartItem={() =>
+          handleManipulateCartItem(item.product, "delete")
+        }
+        item={item.product}
+      />
     </Card>
   ));
 
@@ -105,5 +112,23 @@ function SubTotal({ totalPrice, itemNum }) {
         Total of ${totalPrice} for {itemNum} {itemNum > 1 ? "items" : "item"}
       </em>
     </p>
+  );
+}
+
+function DeleteItemFromCart({
+  handleManipulateCartItem,
+  item,
+  quantityChange,
+}) {
+  return (
+    <button
+      onClick={() => handleManipulateCartItem(item.product, quantityChange)}
+      className="delete"
+    >
+      <img
+        src={Delete}
+        alt="Delete button"
+      />
+    </button>
   );
 }

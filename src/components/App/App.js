@@ -40,6 +40,7 @@ function App() {
   }, []);
 
   function handleManipulateCartItem(product, quantityChange) {
+    console.log(quantityChange);
     // Increases or decreases product quantity based on user choice
     const updatedItemQuantity = calculateUpdatedQuantity(
       product,
@@ -61,11 +62,10 @@ function App() {
   }
 
   function calculateUpdatedQuantity(product, quantityChange) {
-    if (quantityChange === "increase") {
+    if (quantityChange === "increase")
       return shoppingProducts[product.id].itemNum + 1;
-    } else {
-      return shoppingProducts[product.id].itemNum - 1;
-    }
+    else if (quantityChange === "delete") return 0;
+    else return shoppingProducts[product.id].itemNum - 1;
   }
 
   function updateShoppingProducts(
